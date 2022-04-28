@@ -1,32 +1,27 @@
-#userName-field {
-    padding-left: 50px;
-}
-
-#username-input{
-    margin: 10px;
-}
-
-#password-field{
-    padding-left: 50px;
-}
-
-#password-input{
-    margin: 10px;
-}
-
-#login-button{
+#email-field{
     margin-left: 50px;
-    padding-left: 5px;
 }
 
-.login-items{
+#username-field{
+    margin-left: 50px;
+}
+
+#confirm-password-field{
+    margin-left: 50px;
+}
+
+#signup-button{
+    margin-left: 50px;
+}
+
+.signup-items{
     display: flex;
     justify-content: space-between;
     align-content: space-between;
     padding: 5px;
 }
 
-.login-box{
+.input-box-signup{
     display: flex;
     justify-content: space-between;
     align-content: space-between;

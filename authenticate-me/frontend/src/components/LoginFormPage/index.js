@@ -31,33 +31,33 @@ function LoginFormPage() {
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
-      <div id='login-div'>
+      <div className='login-items'>
 
         <label id='userName-field'>
           Username or Email
           <input
             type="text"
-            id='username-input'
+            className='login-box'
             value={credential}
             onChange={(e) => setCredential(e.target.value)}
             required
           />
         </label>
       </div>
-      <div id="password-div">
+      <div className='login-items'>
         <label id='password-field'>
           Password
           <input
             type="password"
-            id='password-input'
+            className='login-box'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </label>
       </div>
-      <div id="login-button">
-        <button type="submit">Log In</button>
+      <div className='login-items'>
+        <button type="submit" id='login-button' >Log In</button>
       </div>
     </form>
   );
