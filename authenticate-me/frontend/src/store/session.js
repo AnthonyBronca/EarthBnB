@@ -3,20 +3,20 @@ import { csrfFetch } from './csrf';
 const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser';
 
-const setUser = (user) => {
+const setUser = (user) => { //action
   return {
     type: SET_USER,
     payload: user,
   };
 };
 
-const removeUser = () => {
+const removeUser = () => { //action
   return {
     type: REMOVE_USER,
   };
 };
 
-export const login = (user) => async (dispatch) => {
+export const login = (user) => async (dispatch) => { //thunks for database
   const { credential, password } = user;
   const response = await csrfFetch('/api/session', {
     method: 'POST',
@@ -26,13 +26,20 @@ export const login = (user) => async (dispatch) => {
     }),
   });
   const data = await response.json();
+  dispatch(setUser(data.user)); //updates state
+  return response;
+};
+
+export const restoreUser = () => async dispatch => {
+  const response = await csrfFetch('/api/session');
+  const data = await response.json();
   dispatch(setUser(data.user));
   return response;
 };
 
 const initialState = { user: null };
 
-const sessionReducer = (state = initialState, action) => {
+const sessionReducer = (state = initialState, action) => { //reducer updates the state
   let newState;
   switch (action.type) {
     case SET_USER:
