@@ -1,0 +1,20 @@
+{
+  "name": "w14-solo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonyBronca/w14-solo-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnthonyBronca/w14-solo-project/issues"
+  },
+  "homepage": "https://github.com/AnthonyBronca/w14-solo-project#readme"
+}
