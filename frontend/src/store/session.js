@@ -16,6 +16,17 @@ const removeUser = () => { //action
   };
 };
 
+// imagining what store.dispatch looks like under the hood
+// store = {
+//   dispatch(actionOrThunk) {
+//     if (if actionOrThunk is action) {
+//       invoke reducers, passing in currState and action
+//   }
+//   if (actionOrThunk is function aka thunk) {
+//     invoke thunk, passing in this.dispatch
+//   }
+// }
+// store.dispatch(signup({name: "Alex"}))
 
 export const signup = (user) => async (dispatch) => {
   const { username, email, password } = user;
@@ -28,6 +39,7 @@ export const signup = (user) => async (dispatch) => {
     }),
   });
   const data = await response.json();
+  // this is literally store.dispatch
   dispatch(setUser(data.user));
   return response;
 };
