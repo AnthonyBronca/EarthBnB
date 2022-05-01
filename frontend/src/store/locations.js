@@ -2,9 +2,10 @@ import { csrfFetch } from './csrf';
 
 const GET_LOCATIONS = 'GET/api/locations'
 
-export const getLocations = () => {
+export const getLocations = (res) => {
     return {
-        type: GET_LOCATIONS
+        type: GET_LOCATIONS,
+        payload: res
     };
 }
 
@@ -26,5 +27,21 @@ const locationReducer = (state = initialState, action) => {
 
     }
 };
+
+export const locationRetrieval = () => async (dispatch) => {
+    const { username, email, password } = user;
+    const response = await csrfFetch("/api/users", {
+      method: "POST",
+      body: JSON.stringify({
+        username,
+        email,
+        password,
+      }),
+    });
+    const data = await response.json();
+    // this is literally store.dispatch
+    dispatch(setUser(data.user));
+    return response;
+  };
 
 export default locationReducer
