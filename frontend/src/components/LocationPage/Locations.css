@@ -1,6 +1,6 @@
 .house-cards{
     border: solid black 1px;
-    padding: 50px;
+    /* padding: 50px; */
 }
 
 .house-details{
@@ -14,6 +14,10 @@
     gap: 24px !important;
 }
 
+#house-listing-img{
+    width: 100%;
+    height: 100%;
+}
 
 
 /* @media (min-width:878px){
