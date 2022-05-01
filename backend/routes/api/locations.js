@@ -12,13 +12,18 @@ router.get('/', (async(req,res)=>{
     const locationName = locations.map(location => location.name) //array of all location names: Full 4 Bed 3 Bath home
     const locationAddress = locations.map(location => location.address) //array of all location address: 9320 talbot dr.
     const locationState = locations.map(location => location.state) //array of all location states: PA,FL
-    const locationCity = locations.map(location => location.city)
-    const locationCounty = locations.map(location => location.country)
-    const price = locations.map(location => location.price)
-    const locationOwnerId = locations.map(location => location.userId)
-    let usersId = [];
-    locationOwnerId.forEach(id=> usersId.push(id))
-
+    const locationCity = locations.map(location => location.city) //array of all cities: Miami, NYC
+    const locationCounty = locations.map(location => location.country) //array of all countries: USA
+    const price = locations.map(location => location.price)// array or all prices
+    const locationOwnerId = locations.map(location => location.userId) // array of ownerId
+    let usersId = []; //array of just id?
+    const locationImage = await Image.findOne({
+        where: {
+            locationId: 1
+        }
+    })
+    const locationURL = locationImage.url
+    //refactor these to be one .map^? i can forEach the locations array and put all the locations within an object so that we can key into it?
 
 
 }))
