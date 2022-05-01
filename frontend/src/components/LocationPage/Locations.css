@@ -1,0 +1,41 @@
+.house-cards{
+    border: solid black 1px;
+    padding: 50px;
+}
+
+.house-details{
+    border: solid black 1px;
+    padding: 10px;
+}
+
+#locations-layout{
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0px, 1fr));
+    gap: 24px !important;
+}
+
+
+
+/* @media (min-width:878px){
+    #locations-layout{
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0px, 1fr));
+    gap: 24px !important;
+    }
+}
+
+@media(min-width: 551px){
+    #locations-layout{
+        display: grid;
+        grid-template-columns: repeat(2,minmax(0px, 1fr));
+        gap: 24px !important;
+        }
+}
+
+@media(min-width: 0){
+    #locations-layout{
+        display: grid;
+        grid-template-columns: repeat(1,minmax(0px, 1fr));
+        gap: 24px !important;
+        }
+} */
