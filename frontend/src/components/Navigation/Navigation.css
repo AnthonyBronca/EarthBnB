@@ -4,12 +4,16 @@
 
 #navigation-ul{
     border: solid black 1px;
-    display: flex;
-    justify-content: right;
 }
 
 #nav-bar-items{
     border: solid black 1px;
+}
+
+#nav-bar-items > {
+    display: flex;
+    margin: 40px;
+    padding: 40px;
 }
 
 #nav-bar-box-container{
