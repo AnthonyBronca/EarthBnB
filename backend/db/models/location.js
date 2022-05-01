@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Locations = sequelize.define('Locations', {
+  const Location = sequelize.define('Location', {
     userId: DataTypes.INTEGER,
     address: DataTypes.STRING,
     city: DataTypes.STRING,
@@ -9,17 +9,17 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     price: DataTypes.INTEGER
   }, {});
-  Locations.associate = function(models) {
+  Location.associate = function(models) {
     // associations can be defined here
-    Locations.belongsTo(models.User, {
+    Location.belongsTo(models.User, {
       foreignKey: 'userId'
-    }),
-    Locations.hasMany(models.Booking, {
+    })
+    Location.hasMany(models.Booking, {
       foreignKey: 'locationId'
-    }),
-    Locations.hasMany(models.Image, {
+    })
+    Location.hasMany(models.Image, {
       foreignKey: 'locationId'
     })
   };
-  return Locations;
+  return Location;
 };

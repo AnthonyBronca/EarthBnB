@@ -1,19 +1,19 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Bookings = sequelize.define('Bookings', {
+  const Booking = sequelize.define('Booking', {
     locationId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER,
     startDate: DataTypes.DATE,
     endDate: DataTypes.DATE
   }, {});
-  Bookings.associate = function(models) {
+  Booking.associate = function(models) {
     // associations can be defined here
-    Bookings.belongsTo(models.User, {
-      foreignKey: 'userId'
-    }),
-    Bookings.belongsTo(models.Location, {
+    Booking.belongsTo(models.Location, {
       foreignKey: 'locationId'
     })
+    Booking.belongsTo(models.User, {
+      foreignKey: 'userId'
+    })
   };
-  return Bookings;
+  return Booking;
 };

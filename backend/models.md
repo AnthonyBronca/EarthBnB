@@ -1,11 +1,11 @@
 
 MODELS
-npx sequelize model:generate --name Locations --attributes userId:integer,address:string,city:string,state:string,country:string,name:string,price:integer
+npx sequelize model:generate --name Location --attributes userId:integer,address:string,city:string,state:string,country:string,name:string,price:integer
 
-npx sequelize model:generate --name Bookings --attributes locationId:integer,userId:integer,startDate:date,endDate:date
+npx sequelize model:generate --name Booking --attributes locationId:integer,userId:integer,startDate:date,endDate:date
 
 
-npx sequelize model:generate --name Images --attributes locationId:integer,url:string
+npx sequelize model:generate --name Image --attributes locationId:integer,url:string
 ------------------------------
 
 

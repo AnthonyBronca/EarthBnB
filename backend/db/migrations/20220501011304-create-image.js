@@ -14,7 +14,7 @@ module.exports = {
         references: {model: 'Locations'}
       },
       url: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(255)
       },
       createdAt: {
         allowNull: false,
