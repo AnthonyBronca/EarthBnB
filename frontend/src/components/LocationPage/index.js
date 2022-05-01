@@ -1,14 +1,18 @@
 import React from "react";
 import './Locations.css'
-import house1 from '/Users/anthonybronca/Desktop/w14-solo/frontend/src/images/house1.jpg'
+
 
 function Locations({}){
+
 
     return (
         <div id="locations-layout">
         <div className="house-cards" >
         <a href="/locations/1">
-            <image src={house1}></image>
+            <img
+            src='https://www.rocketmortgage.com/resources-cmsassets/RocketMortgage.com/Article_Images/Large_Images/TypesOfHomes/types-of-homes-hero.jpg'
+            id="house-listing-img"
+            ></img>
             <div className="house-details">
             <h2>City,State</h2>
             <span>$$$ Night</span>
