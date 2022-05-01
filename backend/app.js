@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const routes = require('./routes');
 const { ValidationError } = require('sequelize');
+const locationRouter = require('./routes/api/locations')
 
 const { environment } = require('./config');
 const isProduction = environment === 'production';
@@ -39,8 +40,10 @@ app.use(
     })
 );
 
-
+//api routes
 app.use(routes);
+app.use('/locations', locationRouter)
+
 
 app.use((_req, _res, next) => {
     const err = new Error("The requested resource couldn't be found.");
