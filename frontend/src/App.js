@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Locations from "./components/LocationPage";
+import NewLocationForm from "./components/NewLocationForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,7 +22,10 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path='/locations'>
+          <Route path='/locations/new'>
+            <NewLocationForm />
+          </Route>
+          <Route exact path='/locations'>
             <Locations />
           </Route>
         </Switch>

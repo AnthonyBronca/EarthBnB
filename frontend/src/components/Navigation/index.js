@@ -28,6 +28,7 @@ function Navigation({ isLoaded }){
     <ul>
       <ul id='nav-bar-items'>
         <NavLink exact to="/">Home</NavLink>
+        <NavLink to={'/locations/new'}>Add a listing</NavLink>
         {isLoaded && sessionLinks}
       </ul>
     </ul>
