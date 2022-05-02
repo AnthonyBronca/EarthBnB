@@ -3,6 +3,7 @@ const router = express.Router();
 const csrf = require("csurf");
 const { check, validationResult } = require("express-validator");
 const {User,Location, Image} = require('/Users/anthonybronca/Desktop/w14-solo/backend/db/models');
+const { response } = require("express");
 // const { asyncHandler, handleValidationErrors } = require("../utils");
 const csrfProtection = csrf({ cookie: true });
 
@@ -12,6 +13,7 @@ router.get('/', (async(req,res)=>{
         include: Image
     }) //locations is an array of all location items
     //refactor these to be one .map^? i can forEach the locations array and put all the locations within an object so that we can key into it?
+
     return res.json(locations)
 }))
 
