@@ -29,7 +29,7 @@ function Locations() {
                         return (
                             <div id="card-container">
                                 <div className="house-cards">
-                                    <a href={`/locations/${location.id}`}>
+                                    <a href={`/locations/${location.id}`} id="a-locations-tag">
                                         <img
                                             src={`${location.Images[0].url}`}
                                             className="house-listing-img"
