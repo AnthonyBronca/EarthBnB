@@ -1,30 +1,53 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import './Locations.css'
-import {getLocations} from '../../store/locations'
+import { useDispatch, useSelector } from "react-redux";
+import "./Locations.css";
+import { getLocations } from "../../store/locations";
 
+function Locations() {
+    const dispatch = useDispatch();
 
-function Locations({}){
+    useEffect(() => {
+        dispatch(getLocations());
+    }, []);
 
-const dispatch = useDispatch();
+    const locations = useSelector((state) => {
+        return state.locations; //state.locations is an array. overwrite locations line 15
+    });
 
-   useEffect(()=>{
-       dispatch(getLocations())
-   });
+    // let imagesArray = [];
+
+    // const locationArray = locations.map(location => location)
+    // locationArray.forEach(location => {
+    //     imagesArray.push(location.Images[0].url);
+    // })
 
     return (
-        <div id="locations-layout">
-        <div className="house-cards" >
-        <a href="/locations/1">
-            <img src='https://www.rocketmortgage.com/resources-cmsassets/RocketMortgage.com/Article_Images/Large_Images/TypesOfHomes/types-of-homes-hero.jpg' id="house-listing-img"></img>
-            <div className="house-details">
-            <h2>City,State</h2>
-            <span>$$$ Night</span>
+        <>
+            <div id="main-container">
+                <div id="locations-layout">
+                    {locations.map((location) => {
+                        return (
+                            <div id="card-container">
+                                <div className="house-cards">
+                                    <a href={`/locations/${location.id}`}>
+                                        <img
+                                            src={`${location.Images[0].url}`}
+                                            className="house-listing-img"
+                                            alt="house for listing"
+                                        ></img>
+                                        <div className="house-details">
+                                            <h3>{`${location.city}, ${location.state}`}</h3>
+                                            <span>{`$${location.price}.00/night`}</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
-        </a>
-        </div>
-        </div>
-    );
+        </>
+    )
 }
 
-export default Locations
+export default Locations;
