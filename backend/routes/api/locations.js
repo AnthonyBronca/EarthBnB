@@ -43,7 +43,7 @@ router.post('/new', (async(req,res)=>{
        const locations = await Location.findAll({
            include: Image
        })
-        return res.json(locations)
+        return res.json(locations) //this sends an object
     // }
 }))
 
