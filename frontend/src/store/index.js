@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import locationReducer from "./locations";
 import sessionReducer from './session';
+import userLocationReducer from "./userLocations";
 
 // preloadState: {
 //   session: sessionInfo,
@@ -10,7 +11,8 @@ import sessionReducer from './session';
 // }
 const rootReducer = combineReducers({
   session: sessionReducer,
-  locations: locationReducer
+  locations: locationReducer,
+  userLocations: userLocationReducer
   // posts: postsReducer,
   // users: usersReducers
 });

@@ -3,12 +3,14 @@ import { csrfFetch } from './csrf';
 const ADD_LOCATIONS = 'locations/addLocations'; //action type
 // const ADD_NEW_LOCATION = 'locations/addNewLocation'
 
+
 const addLocations = (locations) => { //action creator. creates action
   return { //action
     type: ADD_LOCATIONS,
     payload: locations
   };
 };
+
 
 // const addNewLocation = () => {
 //   return {
@@ -30,6 +32,7 @@ export const postNewLocation = (formValues) => async (dispatch) =>{
   return response
 }
 
+
 export const getLocations = () => async (dispatch) => {
   const response = await csrfFetch("/locations");
   const locations = await response.json();
@@ -48,5 +51,6 @@ const locationReducer = (state = initialState, action) => { //reducer updates th
       return state;
   }
 };
+
 
 export default locationReducer;
