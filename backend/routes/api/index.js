@@ -11,7 +11,7 @@ router.use('/users', usersRouter);
 
 
 
-router.get('/api/csrf/resotre', (req,res)=>{
+router.get('/api/csrf/restore', (req,res)=>{
     if (process.env.NODE_ENV !== 'production') {
         router.get('/api/csrf/restore', (req, res) => {
           res.cookie('XSRF-TOKEN', req.csrfToken());
