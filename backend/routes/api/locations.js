@@ -44,14 +44,12 @@ router.get('/', (async(req,res)=>{
 
 router.post('/new', listPostingValidations, (async(req,res)=>{
     console.log(req.body, "this is req.body")
-    const {userId, address, city, state, country, name, price} = req.body;
-
+    const {address, city, state, country, name, price, url} = req.body;
     // const validationErrors = validationResult(req);
-
     // if(validationErrors.isEmpty()){
         console.log('am i here')
         const newLocation = await Location.create({
-            userId,
+            userId:1,
             address,
             city,
             state,
@@ -59,8 +57,11 @@ router.post('/new', listPostingValidations, (async(req,res)=>{
             name,
             price
         })
+
+        const images = await Image.create({
+        })
         // res.redirect("/locations");
-        res.send('ok')
+        return res.json(newLocation)
     // }
 }))
 
