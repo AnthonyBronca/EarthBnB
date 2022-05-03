@@ -4,6 +4,7 @@ import "./Locations.css";
 import { getLocations } from "../../store/locations";
 
 function Locations() {
+
     const dispatch = useDispatch();
 
     useEffect(() => {

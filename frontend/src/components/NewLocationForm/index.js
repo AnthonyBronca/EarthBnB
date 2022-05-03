@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { postNewLocation } from "../../store/locations";
 import './index.css'
 
 function NewLocationForm(){
@@ -12,6 +14,7 @@ function NewLocationForm(){
     const [imageUrl, setImageUrl] = useState('');
     const [errors, setErrors] = useState([]);
     const history = useHistory();
+    const dispatch = useDispatch();
 
     useEffect(()=>{
         const validations = [];
@@ -26,18 +29,18 @@ function NewLocationForm(){
     }, [address,city,state,country,listingDetails,price,imageUrl])
 
     const handleSubmit = () =>{
-        const formValues = {
-            address,
-            city,
-            state,
-            country,
-            listingDetails,
-            price,
-            imageUrl
-        };
-        history.push('/locations')
-    }
-
+            const formValues= {
+                address,
+                city,
+                state,
+                country,
+                name:listingDetails,
+                price,
+                imageUrl
+            };
+            dispatch(postNewLocation(formValues))
+            history.push('/locations')
+        }
     return (
   <form
   className="new-location-form"

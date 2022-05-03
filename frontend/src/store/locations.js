@@ -14,17 +14,23 @@ const addLocations = (locations) => { //action creator. creates action
 const addNewLocation = () => {
   return {
     type: ADD_NEW_LOCATION,
-    payload: newLocation
   }
 }
 
-export const postNewLocation = () => async (dispatch) =>{
+export const postNewLocation = (formValues) => async (dispatch) =>{
+
+
   const options = {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-
+    body: JSON.stringify(formValues)
   }
-  const response = await csrfFetch("/locations/new")
+
+
+  const response = await csrfFetch("/locations/new", options)
+  // const newLocation = await response.json();
+  dispatch(addLocations(response));
+  return response
 }
 
 export const getLocations = () => async (dispatch) => {
@@ -34,6 +40,7 @@ export const getLocations = () => async (dispatch) => {
   dispatch(addLocations(locations));
   return response;
 };
+
 
 
 const initialState = [];
