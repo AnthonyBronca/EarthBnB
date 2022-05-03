@@ -7,30 +7,6 @@ const { response } = require("express");
 //const { asyncHandler, handleValidationErrors } = require("../utils");
 const csrfProtection = csrf({ cookie: true });
 
-// const listPostingValidations = [
-//     check('address')
-//         .exists({checkFalsy: true})
-//         .withMessage("Please enter a valid street address."),
-//     check('city')
-//         .exists({checkFalsy:true})
-//         .withMessage('Please enter a valid city name.'),
-//     check('state')
-//         .exists({checkFalsy:true})
-//         .withMessage('Please select a State.'),
-//     check('country')
-//         .exists({checkFalsy:true})
-//         .withMessage('Please select a valid Country.'),
-//     check('details')
-//         .exists({checkFalsy:true})
-//         .withMessage('Please enter details on your listing. Ex: Full 4 Bed 3 Bath Home')
-//         .isLength({min:5})
-//         .withMessage('Please ensure your details has more than 5 characters.'),
-//     check('price')
-//         .exists({checkFalsy:true})
-//         .withMessage('Please select a listing price.')
-// ]
-
-
 
 router.get('/', (async(req,res)=>{
     const locations = await Location.findAll({
@@ -45,13 +21,10 @@ router.get('/', (async(req,res)=>{
 
 
 router.post('/new', (async(req,res)=>{
-    const {address, city, state, country, name, price, url} = req.body;
-    // const validationErrors = validationResult(req);
-    // if(validationErrors.isEmpty()){
+    const {userId,address, city, state, country, name, price, url} = req.body;
 
-    console.log(req.body)
         const newLocation = await Location.create({
-            userId:1,
+            userId,
             address,
             city,
             state,

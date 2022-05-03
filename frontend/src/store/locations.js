@@ -1,4 +1,3 @@
-
 import { csrfFetch } from './csrf';
 
 const ADD_LOCATIONS = 'locations/addLocations'; //action type

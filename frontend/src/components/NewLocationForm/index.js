@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { postNewLocation } from "../../store/locations";
 import './index.css'
@@ -15,6 +15,9 @@ function NewLocationForm(){
     const [errors, setErrors] = useState([]);
     const history = useHistory();
     const dispatch = useDispatch();
+    const userId = useSelector((state) => {
+        return state.session.user.id
+    })
 
     useEffect(()=>{
         const validations = [];
@@ -30,6 +33,7 @@ function NewLocationForm(){
 
     const handleSubmit = () =>{
             const formValues= {
+                userId,
                 address,
                 city,
                 state,
