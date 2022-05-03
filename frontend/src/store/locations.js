@@ -1,7 +1,7 @@
 import { csrfFetch } from './csrf';
 
 const ADD_LOCATIONS = 'locations/addLocations'; //action type
-const ADD_NEW_LOCATION = 'locations/addNewLocation'
+// const ADD_NEW_LOCATION = 'locations/addNewLocation'
 
 const addLocations = (locations) => { //action creator. creates action
   return { //action
@@ -10,11 +10,11 @@ const addLocations = (locations) => { //action creator. creates action
   };
 };
 
-const addNewLocation = () => {
-  return {
-    type: ADD_NEW_LOCATION,
-  }
-}
+// const addNewLocation = () => {
+//   return {
+//     type: ADD_NEW_LOCATION,
+//   }
+// } add this action and case in reducer to increase speed of render later
 
 export const postNewLocation = (formValues) => async (dispatch) =>{
 
@@ -37,8 +37,6 @@ export const getLocations = () => async (dispatch) => {
   dispatch(addLocations(locations));
   return response;
 };
-
-
 
 const initialState = [];
 
