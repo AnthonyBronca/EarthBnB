@@ -19,7 +19,6 @@ const addNewLocation = () => {
 
 export const postNewLocation = (formValues) => async (dispatch) =>{
 
-
   const options = {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
@@ -28,6 +27,7 @@ export const postNewLocation = (formValues) => async (dispatch) =>{
 
 
   const response = await csrfFetch("/locations/new", options)
+
   // const newLocation = await response.json();
   dispatch(addLocations(response));
   return response

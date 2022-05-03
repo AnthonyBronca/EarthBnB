@@ -15,6 +15,8 @@ function Locations() {
         return state.locations; //state.locations is an array. overwrite locations line 15
     });
 
+    console.log(locations)
+
     // let imagesArray = [];
 
     // const locationArray = locations.map(location => location)
