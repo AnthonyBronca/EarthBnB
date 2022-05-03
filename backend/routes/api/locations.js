@@ -7,28 +7,28 @@ const { response } = require("express");
 //const { asyncHandler, handleValidationErrors } = require("../utils");
 const csrfProtection = csrf({ cookie: true });
 
-const listPostingValidations = [
-    check('address')
-        .exists({checkFalsy: true})
-        .withMessage("Please enter a valid street address."),
-    check('city')
-        .exists({checkFalsy:true})
-        .withMessage('Please enter a valid city name.'),
-    check('state')
-        .exists({checkFalsy:true})
-        .withMessage('Please select a State.'),
-    check('country')
-        .exists({checkFalsy:true})
-        .withMessage('Please select a valid Country.'),
-    check('details')
-        .exists({checkFalsy:true})
-        .withMessage('Please enter details on your listing. Ex: Full 4 Bed 3 Bath Home')
-        .isLength({min:5})
-        .withMessage('Please ensure your details has more than 5 characters.'),
-    check('price')
-        .exists({checkFalsy:true})
-        .withMessage('Please select a listing price.')
-]
+// const listPostingValidations = [
+//     check('address')
+//         .exists({checkFalsy: true})
+//         .withMessage("Please enter a valid street address."),
+//     check('city')
+//         .exists({checkFalsy:true})
+//         .withMessage('Please enter a valid city name.'),
+//     check('state')
+//         .exists({checkFalsy:true})
+//         .withMessage('Please select a State.'),
+//     check('country')
+//         .exists({checkFalsy:true})
+//         .withMessage('Please select a valid Country.'),
+//     check('details')
+//         .exists({checkFalsy:true})
+//         .withMessage('Please enter details on your listing. Ex: Full 4 Bed 3 Bath Home')
+//         .isLength({min:5})
+//         .withMessage('Please ensure your details has more than 5 characters.'),
+//     check('price')
+//         .exists({checkFalsy:true})
+//         .withMessage('Please select a listing price.')
+// ]
 
 
 
@@ -42,12 +42,14 @@ router.get('/', (async(req,res)=>{
 }))
 
 
-router.post('/new', listPostingValidations, (async(req,res)=>{
-    console.log(req.body, "this is req.body")
+
+
+router.post('/new', (async(req,res)=>{
     const {address, city, state, country, name, price, url} = req.body;
     // const validationErrors = validationResult(req);
     // if(validationErrors.isEmpty()){
-        console.log('am i here')
+
+    console.log(req.body)
         const newLocation = await Location.create({
             userId:1,
             address,
@@ -57,11 +59,18 @@ router.post('/new', listPostingValidations, (async(req,res)=>{
             name,
             price
         })
+        // console.log(url, "this is url")
+        const locationId = newLocation.id
 
-        const images = await Image.create({
-        })
-        // res.redirect("/locations");
-        return res.json(newLocation)
+       await Image.create({
+           locationId,
+           url
+       })
+
+       const locations = await Location.findAll({
+           include: Image
+       })
+        return res.json(locations)
     // }
 }))
 

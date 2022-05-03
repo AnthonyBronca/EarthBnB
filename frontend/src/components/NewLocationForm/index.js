@@ -11,7 +11,7 @@ function NewLocationForm(){
     const [country, setCountry] = useState('USA');
     const [listingDetails, setListingDetails] = useState('')
     const [price, setPrice] = useState(0);
-    const [imageUrl, setImageUrl] = useState('');
+    const [url, setUrl] = useState('');
     const [errors, setErrors] = useState([]);
     const history = useHistory();
     const dispatch = useDispatch();
@@ -24,9 +24,9 @@ function NewLocationForm(){
         if(country.length === 0) validations.push('Please enter a country. Ex(USA)');
         if(listingDetails.length < 5) validations.push('Please Enter details on your location. Ex: Full 4 Bedroom 3 Bathroom Home')
         if(price < 0 || price > 1000) validations.push('Price must be between 1-999 per night');
-        if(imageUrl.length < 0) validations.push('Please enter the URL for your image.');
+        if(url.length < 0) validations.push('Please enter the URL for your image.');
         setErrors(validations);
-    }, [address,city,state,country,listingDetails,price,imageUrl])
+    }, [address,city,state,country,listingDetails,price,url])
 
     const handleSubmit = () =>{
             const formValues= {
@@ -36,7 +36,7 @@ function NewLocationForm(){
                 country,
                 name:listingDetails,
                 price,
-                imageUrl
+                url
             };
             dispatch(postNewLocation(formValues))
             history.push('/locations')
@@ -130,8 +130,8 @@ function NewLocationForm(){
           type='text'
           name="URL"
           className='form-input-box'
-          value={imageUrl}
-          onChange={(e)=> setImageUrl(e.target.value)}></input>
+          value={url}
+          onChange={(e)=> setUrl(e.target.value)}></input>
           </div>
       </label>
       </div>
