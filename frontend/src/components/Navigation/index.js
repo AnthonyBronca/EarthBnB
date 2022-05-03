@@ -27,7 +27,7 @@ function Navigation({ isLoaded }){
     <div id='nav-bar-box-container'>
     <ul>
       <ul id='nav-bar-items'>
-        <NavLink exact to="/">Home</NavLink>
+        <NavLink exact to="/locations">Home</NavLink>
         <NavLink to={'/locations/new'}>Add a listing</NavLink>
         {isLoaded && sessionLinks}
       </ul>

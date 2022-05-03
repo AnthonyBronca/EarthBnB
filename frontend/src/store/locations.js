@@ -2,6 +2,7 @@
 import { csrfFetch } from './csrf';
 
 const ADD_LOCATIONS = 'locations/addLocations'; //action type
+const ADD_NEW_LOCATION = 'locations/addNewLocation'
 
 const addLocations = (locations) => { //action creator. creates action
   return { //action
@@ -10,6 +11,21 @@ const addLocations = (locations) => { //action creator. creates action
   };
 };
 
+const addNewLocation = () => {
+  return {
+    type: ADD_NEW_LOCATION,
+    payload: newLocation
+  }
+}
+
+export const postNewLocation = () => async (dispatch) =>{
+  const options = {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+
+  }
+  const response = await csrfFetch("/locations/new")
+}
 
 export const getLocations = () => async (dispatch) => {
   const response = await csrfFetch("/locations");
