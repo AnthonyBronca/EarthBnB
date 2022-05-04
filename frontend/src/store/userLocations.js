@@ -42,7 +42,7 @@ const userLocationReducer = (state = initialState, action) => {
     case ADD_USER_LOCATIONS:
       return action.payload
     case DELETE_USER_LOCATION:
-        // return initialState.filter(location => location !== action.payload);
+        return initialState.filter(location => location !== action.payload);
     default:
       return state;
   }

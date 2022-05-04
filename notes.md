@@ -1,3 +1,9 @@
+data flow:
+
+
+
+
+
 plain js version:
 state is a POJO;
 ex: const state = {
