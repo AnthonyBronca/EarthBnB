@@ -2,6 +2,7 @@ import { csrfFetch } from './csrf';
 
 const ADD_USER_LOCATIONS = 'locations/addUserLocations'
 const DELETE_USER_LOCATION = 'locations/deleteUserLocation'
+const EDIT_LOCATION = 'locations/editLocation';
 
 const addUserLocations = (locations) => {
     return {
@@ -16,6 +17,14 @@ const deleteUserLocation = (location) => {
         payload: location
     }
 }
+
+const editLocation = (location) => {
+  return {
+      type: EDIT_LOCATION,
+      payload: location
+  };
+};
+
 
   export const getUserLocations = (userId) => async (dispatch) => {
     const response = await csrfFetch(`/user/${userId}/locations`);
@@ -34,6 +43,19 @@ const deleteUserLocation = (location) => {
   }
 
 
+  export const updateLocation = (formValues) => async (dispatch) => {
+    const options = {
+        method: 'PUT',
+        Headers: {'Content-type': 'application/json'},
+        body: JSON.stringify(formValues)
+    }
+    const response = await csrfFetch('/locations/:id', options);
+    const location = await response.json();
+    dispatch(editLocation(location));
+    return response;
+}
+
+
 
 const initialState = []
 
@@ -43,6 +65,10 @@ const userLocationReducer = (state = initialState, action) => {
       return action.payload
     case DELETE_USER_LOCATION:
         return initialState.filter(location => location !== action.payload);
+        case EDIT_LOCATION:
+           const filteredArr = initialState.filter(location => {
+               if (location !== action.type) return location});
+            return [...filteredArr, action.payload];
     default:
       return state;
   }

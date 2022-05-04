@@ -7,6 +7,9 @@ import Navigation from "./components/Navigation";
 import Locations from "./components/LocationPage";
 import NewLocationForm from "./components/NewLocationForm";
 import UserListingsPage from "./components/UserListingsPage";
+import LocationEditForm from "./components/LocationEditForm";
+
+
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +36,9 @@ function App() {
           </Route>
           <Route path='/user/:id/locations'>
             <UserListingsPage />
+          </Route>
+          <Route path='/locations/:id/edit-form'>
+            <LocationEditForm />
           </Route>
         </Switch>
       )}

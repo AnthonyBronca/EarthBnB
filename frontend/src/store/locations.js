@@ -33,6 +33,13 @@ export const postNewLocation = (formValues) => async (dispatch) =>{
 }
 
 
+// export const getOneLocation = (locationId) => async (dispatch) => {
+//   const response = await csrfFetch('/locations/:id');
+//   const location = await response.json();
+//   dispatch(getLocation(location));
+//   return response
+// }
+
 export const getLocations = () => async (dispatch) => {
   const response = await csrfFetch("/locations");
   const locations = await response.json();
@@ -42,6 +49,7 @@ export const getLocations = () => async (dispatch) => {
 };
 
 const initialState = [];
+
 
 const locationReducer = (state = initialState, action) => { //reducer updates the state
   switch (action.type) {
