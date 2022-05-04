@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {User,Location, Image} = require('/Users/anthonybronca/Desktop/w14-solo/backend/db/models');
+const {User,Location, Image} = require('../../db/models');
 
 
 
