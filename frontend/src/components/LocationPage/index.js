@@ -23,7 +23,7 @@ function Locations() {
                 <div id="locations-layout">
                     {locations.map((location) => {
                         return (
-                            <div id="card-container">
+                            <div key={`${location.id}`} id="card-container">
                                 <div className="house-cards">
                                     <a href={`/locations/${location.id}`} id="a-locations-tag">
                                         <img
