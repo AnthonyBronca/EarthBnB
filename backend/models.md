@@ -1,4 +1,4 @@
-
+<!--
 MODELS
 npx sequelize model:generate --name Location --attributes userId:integer,address:string,city:string,state:string,country:string,name:string,price:integer
 
@@ -35,12 +35,6 @@ npx sequelize seed:generate --name Image
 
 
 LOCATION SEED
-
-
-
-
-
-
 
 
 Locations migrations:
@@ -269,4 +263,4 @@ IMAGE SEED
 
 [
     {locationId: 1, url: ''}
-]
+] -->

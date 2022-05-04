@@ -1,0 +1,11 @@
+.user-listings-edit-button{
+    cursor: pointer;
+    margin-right: 26px;
+}
+
+
+
+.user-listings-delete-button{
+    cursor: pointer;
+    margin-left: 36px;
+}
