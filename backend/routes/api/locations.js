@@ -16,7 +16,7 @@ router.get('/', (async(req,res)=>{
     const locations = await Location.findAll({
         include: Image
     })
-    console.log(locations[0].Images[0].url, "THIS IS LOCATIONS!!!!!!!!!!!!")
+    // console.log(locations[0].Images[0].url, "THIS IS LOCATIONS!!!!!!!!!!!!")
     return res.json(locations)
 }))
 
