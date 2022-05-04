@@ -47,7 +47,7 @@ function UserListingsPage() {
                                         ></img>
                                         <div className="house-details">
                                             <h3>{`${location.city}, ${location.state}`}</h3>
-                                            <span>{`$${location.price}.00/night`}</span>
+                                            <span>{`$${location.price} night`}</span>
                                         </div>
                                     </a>
                                     <div className='user-locations-buttons'>

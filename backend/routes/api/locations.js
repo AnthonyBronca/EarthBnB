@@ -4,7 +4,12 @@ const csrf = require("csurf");
 const { check, validationResult } = require("express-validator");
 const {User,Location, Image} = require('/Users/anthonybronca/Desktop/w14-solo/backend/db/models');
 const { response } = require("express");
+const { route } = require("./userListings");
 const csrfProtection = csrf({ cookie: true });
+
+
+
+
 
 
 router.get('/', (async(req,res)=>{

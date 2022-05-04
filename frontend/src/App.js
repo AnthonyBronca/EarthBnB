@@ -15,6 +15,8 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
+
+  //delete the test stuff
   return (
     <>
       <Navigation isLoaded={isLoaded} />

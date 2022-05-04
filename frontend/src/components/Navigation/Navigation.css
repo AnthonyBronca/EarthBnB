@@ -7,7 +7,9 @@
 }
 
 #nav-bar-items{
-    border: solid black 1px;
+padding-top: 30px;
+display: flex;
+justify-content: space-between;
 }
 
 #nav-bar-items > {
@@ -19,5 +21,44 @@
 #nav-bar-box-container{
     box-shadow: rgb(0 0 0 / 8%) 0px 1px 1px !important;
     transform-origin: 50% 0% !important;
+}
+
+#logo-img{
+    height: 35px;
+    width: 115px;
+    display: flex;
+    justify-content: start;
+}
+
+#img-container{
+    display: flex;
+    justify-content: start;
+    margin-bottom: 10px;
+}
+
+.navLinks{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+/* #profile-button{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-color: white;
+    box-shadow: none;
 
 }
+
+.hamburger{
+    width: 25px;
+    height: 20px;
+    background-color: black;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+} */
