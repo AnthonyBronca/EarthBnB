@@ -1,12 +1,15 @@
-import './index.js'
+import './index.css'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserLocations } from '../../store/userLocations.js';
+import { useHistory } from 'react-router-dom'
+import { deleteUserLocations } from '../../store/userLocations.js';
 
 function UserListingsPage() {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user)
     const userLocations = useSelector(state => state.userLocations.Locations)
+    const history = useHistory();
 
     useEffect(() => {
         if (sessionUser) {
@@ -14,6 +17,16 @@ function UserListingsPage() {
             dispatch(getUserLocations(userId));
         }
     }, []);
+
+    const editButton = () => {
+        const path = '/locations/:id/edit'
+        history.push(path)
+    }
+
+    function deleteItem(e, locationId) {
+        e.preventDefault();
+        dispatch(deleteUserLocations(locationId))
+    }
 
     return (
         <>
@@ -38,8 +51,9 @@ function UserListingsPage() {
                                         </div>
                                     </a>
                                     <div className='user-locations-buttons'>
-                                        <button>Edit Listing</button>
-                                        <button>Delete Listing</button>
+                                        <button className='user-listings-edit-button' id={`edit-button-${location.id}`} onClick={editButton} >Edit Listing</button>
+                                        <button type="submit" className='user-listings-delete-button' id={`delete-button-${location.id}`}
+                                            onClick={(e) => deleteItem(e, location.id)}>Delete Listing</button>
                                     </div>
                                 </div>
                             </div>

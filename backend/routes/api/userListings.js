@@ -11,6 +11,7 @@ const router = express.Router();
 
 
 
+
 router.get('/:id/locations', asyncHandler(async (req, res) => {
     const currentUserId = req.params.id;
     const userListings = await User.findByPk(currentUserId, {
