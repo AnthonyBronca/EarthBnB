@@ -16,6 +16,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "express": "^4.18.1",
     "serve": "^13.0.2"
   }
 }
