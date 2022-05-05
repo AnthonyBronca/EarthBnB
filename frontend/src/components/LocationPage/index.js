@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, useState } from "react-redux";
 import "./Locations.css";
 import { getLocations } from "../../store/locations";
 
@@ -9,8 +9,7 @@ function Locations() {
 
     useEffect(() => {
         dispatch(getLocations());
-    }, []);
-
+    });
     const locations = useSelector((state) => {
         return state.locations; //state.locations is an array. overwrite locations line 15
     });

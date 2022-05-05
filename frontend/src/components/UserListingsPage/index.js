@@ -1,10 +1,9 @@
 import './index.css'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserLocations } from '../../store/userLocations.js';
 import { useHistory } from 'react-router-dom'
 import { deleteUserLocations } from '../../store/userLocations.js';
-import LocationEditForm from '../LocationEditForm';
 
 function UserListingsPage() {
 
@@ -18,7 +17,7 @@ function UserListingsPage() {
             const userId = sessionUser.id
             dispatch(getUserLocations(userId));
         }
-    }, []);
+    });
 
 
     function editButton(e, locationId){
@@ -38,7 +37,7 @@ function UserListingsPage() {
             </div>
             <div id="main-container">
                 <div id="locations-layout">
-                    {userLocations?.map((location) => {
+                    {/* {userLocations?.map((location) => {
                         return (
                             <div key={`${location.id}`}id="card-container">
                                 <div className="house-cards">
@@ -61,7 +60,7 @@ function UserListingsPage() {
                                 </div>
                             </div>
                         );
-                    })}
+                    })} */}
                 </div>
             </div>
 
