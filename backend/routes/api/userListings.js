@@ -14,7 +14,8 @@ router.get('/:id/bookings', asyncHandler(async (req, res)=>{
   const currentUserId = req.params.id
   const userBookings = await User.findByPk(currentUserId,{
     include:[
-      {model: Booking}
+      {model: Booking},
+      {model: Location}
     ]
   });
   res.json(userBookings)

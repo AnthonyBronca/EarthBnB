@@ -7,9 +7,8 @@ function Bookings () {
     const dispatch = useDispatch();
     const history = useHistory();
     const user = useParams()
-    const bookings = useSelector((state) => state.bookings.Bookings);
+    const bookings = useSelector((state) => state.bookings);
     console.log(bookings, "this is bookings");
-
     useEffect(()=>{
         dispatch(getAllBookings(user.id))
     }, [dispatch])
@@ -20,9 +19,9 @@ function Bookings () {
     return (
         <div>
             <h1>Your Bookings</h1>
-            {bookings? bookings.map(booking => {
+            {/* {bookings? bookings.map(booking => {
                 return (<h2>{`${booking.id}`}</h2>
-            )}): <h2>Please Wait...</h2>}
+            )}): <h2>Please Wait...</h2>} */}
         </div>
     )
 }
