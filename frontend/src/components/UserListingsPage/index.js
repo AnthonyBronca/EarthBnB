@@ -1,32 +1,53 @@
 import './index.css'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserLocations } from '../../store/userLocations.js';
+// import { getUserLocations } from '../../store/userLocations.js';
 import { useHistory } from 'react-router-dom'
-import { deleteUserLocations } from '../../store/userLocations.js';
+import { getUserLocations, deleteUserLocations, updateLocation} from '../../store/userLocations'
 
 function UserListingsPage() {
-
     const dispatch = useDispatch();
-    const sessionUser = useSelector(state => state.session.user)
-    const userLocations = useSelector(state => state.userLocations.Locations)
     const history = useHistory();
+    const sessionUser = useSelector(state=> state.session.user)
 
-    useEffect(() => {
-        if (sessionUser) {
+    useEffect(()=>{
+        if(sessionUser){
             const userId = sessionUser.id
-            dispatch(getUserLocations(userId));
+            dispatch(getUserLocations(userId))
         }
-    });
+    }, [])
+
+    const allLocations = useSelector(state => state.userLocations.userLocation.Locations)
+    console.log(allLocations)
+
+    // const filteredLocations = allLocations.filter(location =>{
+    //     if(location.userId === sessionUser.id){
+    //         return location
+    //     }
+    // })
+
+    // // console.log(filteredLocations)
+
+
+    // const locations = state
+    // console.log(locations)
+    // useEffect(() => {
+    //     if (state.session.user) {
+    //         const userId = state.session.user.id
+    //         dispatch(getUserLocations(userId));
+    //     }
+    // },[]);
 
 
     function editButton(e, locationId){
         e.preventDefault();
+        e.stopPropagation();
         history.push(`/locations/${locationId}/edit-form`)
     }
 
     function deleteItem(e, locationId) {
         e.preventDefault();
+        e.stopPropagation()
         return dispatch(deleteUserLocations(locationId))
     }
 
@@ -37,7 +58,7 @@ function UserListingsPage() {
             </div>
             <div id="main-container">
                 <div id="locations-layout">
-                    {/* {userLocations?.map((location) => {
+                {allLocations.map((location) => {
                         return (
                             <div key={`${location.id}`}id="card-container">
                                 <div className="house-cards">
@@ -60,11 +81,10 @@ function UserListingsPage() {
                                 </div>
                             </div>
                         );
-                    })} */}
-                </div>
-            </div>
-
-        </>
+                    })}
+                 </div>
+             </div>
+         </>
     )
 
 }

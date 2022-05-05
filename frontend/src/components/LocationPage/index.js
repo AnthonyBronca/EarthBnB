@@ -6,14 +6,13 @@ import { getLocations } from "../../store/locations";
 function Locations() {
 
     const dispatch = useDispatch();
-
     useEffect(() => {
         dispatch(getLocations());
-    });
+    }, []);
     const locations = useSelector((state) => {
-        return state.locations; //state.locations is an array. overwrite locations line 15
+        return state.locations.allLocations; //state.locations is an array. overwrite locations line 15
     });
-
+    console.log(locations, "this is locations")
     // console.log(locations[0].Images[0].url, "this is our test******")
 
     return (

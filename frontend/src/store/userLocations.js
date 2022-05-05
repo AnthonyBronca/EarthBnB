@@ -57,18 +57,27 @@ const editLocation = (location) => {
 
 
 
-const initialState = []
+const initialState = {}
 
 const userLocationReducer = (state = initialState, action) => {
+  let newState;
   switch(action.type){
     case ADD_USER_LOCATIONS:
-      return action.payload
-    case DELETE_USER_LOCATION:
-        return initialState.filter(location => location !== action.payload);
-        case EDIT_LOCATION:
-           const filteredArr = initialState.filter(location => {
-               if (location !== action.type) return location});
-            return [...filteredArr, action.payload];
+      newState = {...initialState}
+      newState.userLocation = action.payload
+      // console.log(newState, "this is initial state")
+      return newState
+      // case DELETE_USER_LOCATION:
+      //   // console.log(action.payload, "this is delete's payload")
+      //   // console.log(newState.allLocations)
+      //   newState.allLocations = newState.allLocations.filter(location => {
+      //     if(location.id !== action.payload.id) return location
+      //   })
+      //   return newState;
+        // case EDIT_LOCATION:
+        //    const filteredArr = initialState.filter(location => {
+        //        if (location !== action.type) return location});
+        //     return [...filteredArr, action.payload];
     default:
       return state;
   }

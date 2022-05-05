@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import locationReducer from "./locations";
 import sessionReducer from './session';
 import userLocationReducer from "./userLocations";
-import oneLocationReducer from "./oneLocation";
+// import oneLocationReducer from "./oneLocation";
 // preloadState: {
 //   session: sessionInfo,
 //   posts: listOfPosts,
@@ -13,7 +13,7 @@ const rootReducer = combineReducers({
   session: sessionReducer,
   locations: locationReducer,
   userLocations: userLocationReducer,
-  oneLocation: oneLocationReducer,
+  // oneLocation: oneLocationReducer,
   // posts: postsReducer,
   // users: usersReducers
 });
