@@ -5,7 +5,7 @@ const ADD_LOCATIONS = 'locations/addLocations'; //action type
 // const ADD_NEW_LOCATION = 'locations/addNewLocation'
 // const DELETE_LOCATION = 'locations/deleteLocation'
 // const EDIT_LOCATION = 'locations/editLocation';
-// const ADD_USER_LOCATIONS = 'locations/addUserLocations'
+const ADD_USER_LOCATIONS = 'locations/addUserLocations'
 
 
 const addLocations = (locations) => { //action creator. creates action
@@ -29,12 +29,12 @@ const addLocations = (locations) => { //action creator. creates action
 //   };
 // };
 
-// const addUserLocations = (locations) => {
-//   return {
-//     type: ADD_USER_LOCATIONS,
-//     payload: locations
-//   }
-// }
+const addUserLocations = (locations) => {
+  return {
+    type: ADD_USER_LOCATIONS,
+    payload: locations
+  }
+}
 
 
 // const addNewLocation = () => {
@@ -107,15 +107,10 @@ const locationReducer = (state = initialState, action) => { //reducer updates th
   switch (action.type) {
     case ADD_LOCATIONS:
       newState = {...state};
-      newState.allLocations = action.payload
+      action.payload.forEach(location => {
+        newState[location.id] = location
+      })
       return newState;
-    // case DELETE_LOCATION:
-    //   // console.log(action.payload, "this is delete's payload")
-    //   // console.log(newState.allLocations)
-    //   newState.allLocations = newState.allLocations.filter(location => {
-    //     if(location.id !== action.payload.id) return location
-    //   })
-    //   return newState;
       //payload is an object=> {id:66, userId: 5, address: '3200 N Alafaya Trail}
     // case ADD_USER_LOCATIONS:
     //   newState = {...state};

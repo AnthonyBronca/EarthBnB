@@ -8,7 +8,7 @@ import Locations from "./components/LocationPage";
 import NewLocationForm from "./components/NewLocationForm";
 import UserListingsPage from "./components/UserListingsPage";
 import LocationEditForm from "./components/LocationEditForm";
-
+import Bookings from "./components/Bookings";
 
 
 function App() {
@@ -39,6 +39,9 @@ function App() {
           </Route>
           <Route path='/locations/:id/edit-form'>
             <LocationEditForm />
+          </Route>
+          <Route path='/user/:id/bookings'>
+            <Bookings />
           </Route>
         </Switch>
       )}

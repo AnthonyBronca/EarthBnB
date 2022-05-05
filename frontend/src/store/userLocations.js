@@ -63,18 +63,20 @@ const userLocationReducer = (state = initialState, action) => {
   let newState;
   switch(action.type){
     case ADD_USER_LOCATIONS:
-      newState = {...initialState}
-      newState.userLocation = action.payload
+      newState = {...state} // {}
+      action.payload.Locations.forEach(location=>{
+        newState[location.id] = location
+      })
       // console.log(newState, "this is initial state")
       return newState
-      // case DELETE_USER_LOCATION:
-      //   // console.log(action.payload, "this is delete's payload")
-      //   // console.log(newState.allLocations)
-      //   newState.allLocations = newState.allLocations.filter(location => {
-      //     if(location.id !== action.payload.id) return location
-      //   })
-      //   return newState;
-        // case EDIT_LOCATION:
+      case DELETE_USER_LOCATION:
+        newState = {...state};
+          const id = action.payload.id
+          delete newState[id]
+        return newState;
+        case EDIT_LOCATION:
+          newState = {...state};
+          // const id = action.payload.id;
         //    const filteredArr = initialState.filter(location => {
         //        if (location !== action.type) return location});
         //     return [...filteredArr, action.payload];

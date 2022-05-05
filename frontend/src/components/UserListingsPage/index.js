@@ -9,34 +9,17 @@ function UserListingsPage() {
     const dispatch = useDispatch();
     const history = useHistory();
     const sessionUser = useSelector(state=> state.session.user)
+    const allLocations = useSelector(state => state.userLocations)
+    const locations = Object.values(allLocations)
+    console.log(locations, '***** this is what i want')
+
 
     useEffect(()=>{
         if(sessionUser){
             const userId = sessionUser.id
             dispatch(getUserLocations(userId))
         }
-    }, [])
-
-    const allLocations = useSelector(state => state.userLocations.userLocation.Locations)
-    console.log(allLocations)
-
-    // const filteredLocations = allLocations.filter(location =>{
-    //     if(location.userId === sessionUser.id){
-    //         return location
-    //     }
-    // })
-
-    // // console.log(filteredLocations)
-
-
-    // const locations = state
-    // console.log(locations)
-    // useEffect(() => {
-    //     if (state.session.user) {
-    //         const userId = state.session.user.id
-    //         dispatch(getUserLocations(userId));
-    //     }
-    // },[]);
+    }, [dispatch]) //maybe delete alllocations from here
 
 
     function editButton(e, locationId){
@@ -58,13 +41,13 @@ function UserListingsPage() {
             </div>
             <div id="main-container">
                 <div id="locations-layout">
-                {allLocations.map((location) => {
+                 {locations? locations.map((location) => {
                         return (
                             <div key={`${location.id}`}id="card-container">
                                 <div className="house-cards">
                                     <a href={`/locations/${location.id}`} id="a-locations-tag">
                                         <img
-                                            src={`${location.Images[0].url}`}
+                                            src={`${location?.Images[0]?.url}`}
                                             className="house-listing-img"
                                             alt="house for listing"
                                         ></img>
@@ -81,7 +64,7 @@ function UserListingsPage() {
                                 </div>
                             </div>
                         );
-                    })}
+                    }): <h2>Loading</h2>}
                  </div>
              </div>
          </>

@@ -4,28 +4,28 @@ import "./Locations.css";
 import { getLocations } from "../../store/locations";
 
 function Locations() {
-
     const dispatch = useDispatch();
+    const locationsObj = useSelector((state) => state.locations);
+    const locations = Object.values(locationsObj)
+    // console.log(locations, '*****')
+
     useEffect(() => {
         dispatch(getLocations());
-    }, []);
-    const locations = useSelector((state) => {
-        return state.locations.allLocations; //state.locations is an array. overwrite locations line 15
-    });
-    console.log(locations, "this is locations")
+    }, [dispatch]);
+    // console.log(locations, "this is locations")
     // console.log(locations[0].Images[0].url, "this is our test******")
 
     return (
         <>
             <div id="main-container">
                 <div id="locations-layout">
-                    {locations.map((location) => {
+                    {locations? locations.map((location) => {
                         return (
                             <div key={`${location.id}`} id="card-container">
                                 <div className="house-cards">
                                     <a href={`/locations/${location.id}`} id="a-locations-tag">
                                         <img
-                                            src={`${location.Images[0].url}`}
+                                            src={`${location?.Images[0]?.url}`}
                                             className="house-listing-img"
                                             alt="house for listing"
                                         ></img>
@@ -37,7 +37,7 @@ function Locations() {
                                 </div>
                             </div>
                         );
-                    })}
+                    }): <h2>Loading</h2>}
                 </div>
             </div>
         </>
