@@ -6,14 +6,28 @@ import { updateLocation } from "../../store/userLocations";
 
 function LocationEditForm(){
     const locationId = useParams()
+    const id = locationId.id
+    const userListings = useSelector((state) => state.userLocations)
 
-    const [address, setAddress] = useState('');
-    const [city, setCity] = useState('');
-    const [state, setState] = useState('');
+    const item = userListings[id]
+    const oldAddress = item.address;
+    const oldCity = item.city;
+    const oldstate = item.state;
+    const oldPrice = item.price;
+    const oldListingDetails = item.name;
+    const oldImageUrl = item.Images[0].url;
+
+    console.log(item)
+
+
+
+    const [address, setAddress] = useState(oldAddress);
+    const [city, setCity] = useState(oldCity);
+    const [state, setState] = useState(oldstate);
     const [country, setCountry] = useState('USA');
-    const [listingDetails, setListingDetails] = useState('')
-    const [price, setPrice] = useState(0);
-    const [url, setUrl] = useState('');
+    const [listingDetails, setListingDetails] = useState(oldListingDetails)
+    const [price, setPrice] = useState(oldPrice);
+    const [url, setUrl] = useState(oldImageUrl);
     const [errors, setErrors] = useState([]);
     const history = useHistory();
     const dispatch = useDispatch();
@@ -34,7 +48,8 @@ function LocationEditForm(){
         setErrors(validations);
     }, [address,city,state,country,listingDetails,price,url])
 
-    const handleSubmit = () =>{
+    const handleSubmit = (e) =>{
+        e.preventDefault();
             const formValues= {
                 locationId,
                 userId,
@@ -47,7 +62,7 @@ function LocationEditForm(){
                 url
             };
             dispatch(updateLocation(formValues))
-            history.push(`/users/${userId}/locations`)
+            history.push(`/user/${userId}/locations`)
         }
     return (
         <form
@@ -67,6 +82,7 @@ function LocationEditForm(){
           name="address"
           className='form-input-box'
           value={address}
+          disabled={true}
           onChange={(e)=> setAddress(e.target.value)}></input>
           </div>
       </label>
@@ -78,6 +94,7 @@ function LocationEditForm(){
           type='text'
           name="city"
           className='form-input-box'
+          disabled={true}
           value={city}
           onChange={(e)=>setCity(e.target.value)}></input>
           </div>
@@ -91,6 +108,7 @@ function LocationEditForm(){
           name="state"
           className='form-input-box'
           value={state}
+          disabled={true}
           onChange={(e)=> setState(e.target.value)}></input>
           </div>
       </label>
@@ -103,6 +121,7 @@ function LocationEditForm(){
           name="country"
           className='form-input-box'
           value={country}
+          disabled={true}
           onChange={(e)=> setCountry(e.target.value)}></input>
           </div>
       </label>

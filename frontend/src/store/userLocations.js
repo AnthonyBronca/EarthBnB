@@ -76,13 +76,14 @@ const userLocationReducer = (state = initialState, action) => {
         return newState;
         case EDIT_LOCATION:
           newState = {...state};
-          // const id = action.payload.id;
-        //    const filteredArr = initialState.filter(location => {
-        //        if (location !== action.type) return location});
-        //     return [...filteredArr, action.payload];
+          const itemId = action.payload.id
+          newState[itemId] = action.payload
+            return newState
     default:
       return state;
   }
 };
+
+//payload for edit =  {id: 95, userId: 5, address: 'Spongebob Ln.', city:, state, price, userId,}
 
 export default userLocationReducer

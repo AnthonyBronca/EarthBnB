@@ -43,7 +43,7 @@ function NewLocationForm(){
                 url
             };
             dispatch(postNewLocation(formValues))
-            history.push('/locations')
+            history.push(`/user/${userId}locations`)
         }
     return (
   <form
