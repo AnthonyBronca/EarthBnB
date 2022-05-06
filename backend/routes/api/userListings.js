@@ -12,12 +12,14 @@ const router = express.Router();
 
 router.get('/:id/bookings', asyncHandler(async (req, res)=>{
   const currentUserId = req.params.id
-  const userBookings = await User.findByPk(currentUserId,{
-    include:[
-      {model: Booking},
-      {model: Location}
-    ]
-  });
+  const locationAndBookings = await Location.findAll({
+    where: User.id === currentUserId,
+    include: Booking
+  })
+
+  const images = await Image.findAll({where: Image.locationId === locationAndBookings.id})
+
+  const userBookings = [{...locationAndBookings,images}]
   res.json(userBookings)
 }))
 

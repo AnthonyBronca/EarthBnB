@@ -25,8 +25,14 @@ let newState;
 switch(action.type){
         case GET_BOOKINGS:
             newState = {...state};
-            newState = action.payload
+            console.log(action.payload, "action payload")
+            action.payload.forEach(el => {
+                newState.bookings = el;
+            })
             return newState
+    //   action.payload.forEach(booking => {
+    //     newState[booking.id] = booking
+    //   })
         default:
             return state;
     }
