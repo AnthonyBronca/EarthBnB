@@ -12,6 +12,22 @@ router.get('/:id/reviews', asyncHandler(async(req,res)=>{
     res.json(reviews)
 }))
 
+router.post('/:id/reviews', asyncHandler(async(req,res)=> {
+    const {userId, locationId, review, rating} = req.body;
+    console.log(req.body)
+
+        const newReview = await Review.create({
+            userId,
+            locationId,
+            review,
+            rating,
+        })
+
+        // return res.send(':)')
+        return res.json(newReview) //this sends an object
+}))
+
+
 
 
 module.exports = router

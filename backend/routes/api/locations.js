@@ -98,6 +98,7 @@ router.put('/:id', async(req,res)=>{
 })
 
 
+
 // router.get('/:id/locations', asyncHandler(async (req, res) => {
 //     const currentUserId = req.params.id;
 //     const userListings = await User.findByPk(currentUserId, {
