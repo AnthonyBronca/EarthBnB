@@ -25,10 +25,13 @@ let newState;
 switch(action.type){
         case GET_BOOKINGS:
             newState = {...state};
-            console.log(action.payload, "action payload")
-            action.payload.forEach(el => {
-                newState.bookings = el;
-            })
+            const bookingData = action.payload;
+            newState.bookingAndLocations = bookingData;
+
+            // bookingData.forEach(el => newState.locations = el)
+            const imageItems = action.payload;
+            // imageData.forEach(el=> newState.imageItems = el)
+            newState.imageData = imageItems
             return newState
     //   action.payload.forEach(booking => {
     //     newState[booking.id] = booking

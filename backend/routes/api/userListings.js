@@ -19,7 +19,7 @@ router.get('/:id/bookings', asyncHandler(async (req, res)=>{
 
   const images = await Image.findAll({where: Image.locationId === locationAndBookings.id})
 
-  const userBookings = [{...locationAndBookings,images}]
+  const userBookings = {bookingItems: locationAndBookings, imageItems: images}
   res.json(userBookings)
 }))
 
