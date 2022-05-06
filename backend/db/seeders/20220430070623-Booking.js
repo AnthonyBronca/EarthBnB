@@ -9,9 +9,9 @@ module.exports = {
       Example:
       */
    return queryInterface.bulkInsert('Bookings', [
-    {locationId:"62",userId:'4',startDate:'07/04/2022',endDate:'07/05/2022',createdAt:'2022-03-02',updatedAt:'2022-03-02'},
-    {locationId:"63",userId:'5',startDate:'06/01/2022',endDate:'07/01/2022',createdAt:'2022-03-02',updatedAt:'2022-03-02'},
-    {locationId:"64",userId:'6',startDate:'07/04/2022',endDate:'07/05/2022',createdAt:'2022-03-02',updatedAt:'2022-03-02'}
+    {locationId:"1",userId:'1',startDate:'07/04/2022',endDate:'07/05/2022',createdAt:'2022-03-02',updatedAt:'2022-03-02'},
+    {locationId:"2",userId:'2',startDate:'06/01/2022',endDate:'07/01/2022',createdAt:'2022-03-02',updatedAt:'2022-03-02'},
+    {locationId:"3",userId:'3',startDate:'07/04/2022',endDate:'07/05/2022',createdAt:'2022-03-02',updatedAt:'2022-03-02'}
    ], {});
   },
 
