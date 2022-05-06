@@ -8,8 +8,8 @@ import Locations from "./components/LocationPage";
 import NewLocationForm from "./components/NewLocationForm";
 import UserListingsPage from "./components/UserListingsPage";
 import LocationEditForm from "./components/LocationEditForm";
-import Bookings from "./components/Bookings";
-import Reviews from "./components/Reviews";
+// import Bookings from "./components/Bookings";
+// import Reviews from "./components/Reviews";
 import OneLocation from "./components/OneLocation";
 
 
@@ -42,13 +42,13 @@ function App() {
           <Route path='/locations/:id/edit-form'>
             <LocationEditForm />
           </Route>
-          <Route path='/user/:id/bookings'>
+          {/* <Route path='/user/:id/bookings'>
             <Bookings />
-          </Route>
-          <Route path='/user/:id/reviews'>
+          </Route> */}
+          {/* <Route path='/user/:id/reviews'>
             <Reviews />
-          </Route>
-          <Route path={'/locations/:id'}>
+          </Route> */}
+          <Route path='/locations/:id'>
           <OneLocation />
           </Route>
 
