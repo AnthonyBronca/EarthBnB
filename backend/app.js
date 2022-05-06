@@ -6,10 +6,6 @@ const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const routes = require('./routes');
 const { ValidationError } = require('sequelize');
-const locationRouter = require('./routes/api/locations')
-const userListingsRouter = require('./routes/api/userListings')
-const reviewRouter = require('./routes/api/reviews')
-
 const { environment } = require('./config');
 const isProduction = environment === 'production';
 
@@ -44,9 +40,7 @@ app.use(
 
 //api routes
 app.use(routes);
-app.use('/locations', locationRouter)
-app.use('/user', userListingsRouter)
-app.use('/user', reviewRouter)
+
 
 
 app.use((_req, _res, next) => {

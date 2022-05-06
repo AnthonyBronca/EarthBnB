@@ -12,7 +12,7 @@ const addBookings = (bookings) => {
 
 
 export const getAllBookings = (userId) =>  async (dispatch)  => {
-    const response = await csrfFetch(`/user/${userId}/bookings`)
+    const response = await csrfFetch(`/api/user/${userId}/bookings`)
     const bookings = await response.json()
     dispatch(addBookings(bookings));
     return bookings;

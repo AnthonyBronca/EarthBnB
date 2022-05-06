@@ -27,7 +27,7 @@ const editLocation = (location) => {
 
 
   export const getUserLocations = (userId) => async (dispatch) => {
-    const response = await csrfFetch(`/user/${userId}/locations`);
+    const response = await csrfFetch(`/api/user/${userId}/locations`);
     const locations = await response.json();
 
 
@@ -36,7 +36,7 @@ const editLocation = (location) => {
   }
 
   export const deleteUserLocations = (locationId) => async (dispatch)=> {
-      const response = await csrfFetch(`/locations/${locationId}`, {method: 'DELETE'});
+      const response = await csrfFetch(`/api/locations/${locationId}`, {method: 'DELETE'});
       const location = await response.json();
       dispatch(deleteUserLocation(location))
       return response
@@ -49,7 +49,7 @@ const editLocation = (location) => {
         Headers: {'Content-type': 'application/json'},
         body: JSON.stringify(formValues)
     }
-    const response = await csrfFetch('/locations/:id', options);
+    const response = await csrfFetch('/api/locations/:id', options);
     const location = await response.json();
     dispatch(editLocation(location));
     return response;

@@ -11,7 +11,7 @@ const getOneLocationActionCreator = (location) => {
 };
 
 export const getOneLocation = (locationId) => async (dispatch) =>{
-    const response = await csrfFetch(`/locations/${locationId}`);
+    const response = await csrfFetch(`/api/locations/${locationId}`);
     const location  = await response.json();
     dispatch(getOneLocationActionCreator(location))
     return response;
@@ -31,7 +31,7 @@ export const addNewReview = (formValues, locationId) => async (dispatch) => {
         Headers: {'Content-type': 'application/json'},
         body: JSON.stringify(formValues)
     }
-    const response = await csrfFetch(`/locations/${locationId}`, option);
+    const response = await csrfFetch(`/api/locations/${locationId}`, option);
     const review = await response.json();
     dispatch(addReview(review))
     return response;

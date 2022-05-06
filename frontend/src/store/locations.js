@@ -26,7 +26,7 @@ export const postNewLocation = (formValues) => async (dispatch) =>{
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(formValues)
   }
-  const response = await csrfFetch("/locations/new", options)
+  const response = await csrfFetch("/api/locations/new", options)
   const locations = await response.json()
   // const newLocation = await response.json();
   dispatch(addLocations(locations));
@@ -35,7 +35,7 @@ export const postNewLocation = (formValues) => async (dispatch) =>{
 
 
 export const getLocations = () => async (dispatch) => {
-  const response = await csrfFetch("/locations");
+  const response = await csrfFetch("/api/locations");
   const locations = await response.json();
   // this is literally store.dispatch
   dispatch(addLocations(locations));

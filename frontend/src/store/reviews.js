@@ -11,7 +11,7 @@ const getReview = (reviews) =>{
 
 
 export const getUserReviews = (userId) => async (dispatch) => {
-    const response = await csrfFetch(`/user/${userId}/reviews`);
+    const response = await csrfFetch(`/api/user/${userId}/reviews`);
     const reviews = await response.json();
     dispatch(getReview(reviews));
     return response;
