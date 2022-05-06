@@ -4,6 +4,8 @@ import locationReducer from "./locations";
 import sessionReducer from './session';
 import userLocationReducer from "./userLocations";
 import bookingsReducer from "./bookings";
+import reviewReducer from "./reviews";
+import oneLocationReducer from "./oneLocation";
 // preloadState: {
 //   session: sessionInfo,
 //   posts: listOfPosts,
@@ -13,7 +15,9 @@ const rootReducer = combineReducers({
   session: sessionReducer,
   locations: locationReducer,
   userLocations: userLocationReducer,
-  bookings: bookingsReducer
+  bookings: bookingsReducer,
+  reviews: reviewReducer,
+  oneLocation: oneLocationReducer
   // posts: postsReducer,
   // users: usersReducers
 });

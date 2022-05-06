@@ -6,6 +6,8 @@ npx sequelize model:generate --name Booking --attributes locationId:integer,user
 
 
 npx sequelize model:generate --name Image --attributes locationId:integer,url:string
+
+npx sequelize model:generate --name Review --attributes userId:integer,locationId:integer,review:string,rating:integer
 ------------------------------
 
 
@@ -32,6 +34,7 @@ SEEDS:
 npx sequelize seed:generate --name Location
 npx sequelize seed:generate --name Booking
 npx sequelize seed:generate --name Image
+npx sequelize seed:generate --name Review
 
 
 LOCATION SEED
@@ -264,3 +267,11 @@ IMAGE SEED
 [
     {locationId: 1, url: ''}
 ] -->
+
+
+Review seed:
+
+{userId:4, locationId:63, review:'Wow this place was amazing!', rating:5,  createdAt: '10-10-2000', updatedAt: '10-10-2000'},
+     {userId:5, locationId:91, review:'The place was very clean!', rating:4, createdAt: '10-10-2000', updatedAt: '10-10-2000'},
+     {userId:4, locationId:91, review:'This place was okay', rating:3,  createdAt: '10-10-2000', updatedAt: '10-10-2000'},
+     {userId:4, locationId:92, review:'One of the best places I have stayed at!', rating:5, createdAt: '10-10-2000', updatedAt: '10-10-2000' }

@@ -9,6 +9,8 @@ import NewLocationForm from "./components/NewLocationForm";
 import UserListingsPage from "./components/UserListingsPage";
 import LocationEditForm from "./components/LocationEditForm";
 import Bookings from "./components/Bookings";
+import Reviews from "./components/Reviews";
+import OneLocation from "./components/OneLocation";
 
 
 function App() {
@@ -43,6 +45,13 @@ function App() {
           <Route path='/user/:id/bookings'>
             <Bookings />
           </Route>
+          <Route path='/user/:id/reviews'>
+            <Reviews />
+          </Route>
+          <Route path={'/locations/:id'}>
+          <OneLocation />
+          </Route>
+
         </Switch>
       )}
     </>

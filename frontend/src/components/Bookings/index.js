@@ -13,20 +13,20 @@ function Bookings () {
     // const bookingsArr = Object.values(bookings)
     // const images = stateBookings.bookings.images
     // console.log('what is this ', bookingsArr)
-    console.log(itemsObj, "@#%@#%@#%")
+    // console.log(itemsObj, "@#%@#%@#%")
 
 
-    // we are currently working on query for bookings. I have location/bookings in an obj, but I cant get images at the same time
-    // may have to just render the names of those
+    // // we are currently working on query for bookings. I have location/bookings in an obj, but I cant get images at the same time
+    // // may have to just render the names of those
 
-    useEffect(()=>{
-        dispatch(getAllBookings(user.id))
-    }, [dispatch])
+    // useEffect(()=>{
+    //     dispatch(getAllBookings(user.id))
+    // }, [dispatch])
 
 
     return (
         <>
-            <div>
+            {/* <div>
                 <h1 className='user-listings-header'>Your Bookings</h1>
             </div>
             <div id="main-container">
@@ -57,7 +57,7 @@ function Bookings () {
                         );
                     }): <h2>Loading</h2>}
                  </div>
-             </div>
+             </div> */}
          </>
 
         )

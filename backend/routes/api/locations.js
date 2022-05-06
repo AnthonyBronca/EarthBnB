@@ -56,40 +56,45 @@ router.delete('/:id', async(req,res)=>{
 
 router.get('/:id', async(req,res)=>{
     const id = req.params.id;
+    // console.log(id, "this is id?")
     const location = await Location.findByPk(id, {include: Image});
+
 
     return res.json(location)
 })
 
 router.put('/:id', async(req,res)=>{
-    const id = req.body.locationId.id
-    const newFormItems = req.body
-    console.log(newFormItems)
-    const newPrice = newFormItems.price;
-    const newName = newFormItems.name;
-    const newImage = newFormItems.url
+    const id = req.body.locationId.id // grab the id
+    const newFormItems = req.body //the form items from the request
+    console.log(newFormItems) //console log
+    const newPrice = newFormItems.price; //variable for the new form items
+    const newName = newFormItems.name; //variable for new form items
+    const newImage = newFormItems.url //varaible for new from items
+//^ all of this is same as post stuff
 
     const location = await Location.findByPk(id, {include: Image})
-    const oldPrice = location.price;
-    const oldName = location.name;
-    const oldImage = location.Images[0]
+    //find that specific location and image
+    const oldPrice = location.price; // grab the old data
+    const oldName = location.name; //grab the old data
+    const oldImage = location.Images[0] //grab the old data
 
-    if (oldPrice !== newPrice){
-        location.price = newPrice;
-        await location.save();
+    if (oldPrice !== newPrice){ //check if they changed the data
+        location.price = newPrice; //set the price = new price
+        await location.save(); //save that change
     }
-    if (oldName !== newName){
-        location.name = newName;
-        await location.save();
+    if (oldName !== newName){//check if they changed the data
+        location.name = newName; //set the name = new name
+        await location.save(); //save that change
     }
-    if(oldImage !== newImage){
-        const image = await Image.findByPk(oldImage.id)
-        image.url = newImage;
-        await image.save()
+    if(oldImage !== newImage){ //check if they changed the data
+        const image = await Image.findByPk(oldImage.id) //grab the old image
+        image.url = newImage; //update name
+        await image.save() //save that change
     }
 
     const updatedLocation = await Location.findByPk(id, {include: Image})
-    return res.json(updatedLocation)
+    //find the location again after the changes are saved
+    return res.json(updatedLocation) //send it out
 })
 
 
