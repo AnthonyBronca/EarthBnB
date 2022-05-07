@@ -19,7 +19,7 @@ console.log(sessionUser)
     sessionLinks = (
       <>
         <LoginFormModal />
-        <NavLink to="/signup">Sign Up</NavLink>
+        <NavLink className='navLinks' to="/signup">Sign Up</NavLink>
       </>
     );
   }
