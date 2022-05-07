@@ -33,7 +33,6 @@ console.log(sessionUser)
         <img id='logo-img' src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2560px-Airbnb_Logo_B%C3%A9lo.svg.png'></img>
         </div>
         <NavLink className='navLinks' exact to="/locations">Home</NavLink>
-        <NavLink className='navLinks' to={`/user/${sessionUser?.id}/reviews`}>Your Reviews</NavLink>
         <NavLink className='navLinks' to={'/locations/new'}>Add a listing</NavLink>
         <NavLink className='navLinks' to={`/user/${sessionUser?.id}/locations`}>Your Listings</NavLink>
         {isLoaded && sessionLinks}
