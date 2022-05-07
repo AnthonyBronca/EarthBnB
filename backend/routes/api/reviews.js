@@ -27,6 +27,15 @@ router.post('/:id/reviews', asyncHandler(async(req,res)=> {
         return res.json(newReview) //this sends an object
 }))
 
+// router.delete('/:id/reviews', asyncHandler(async(req,res)=> {
+//     const id = req.body.reviewId
+
+//     const item = await Review.findByPk(id)
+//     const deletedItem = item
+//     await item.destroy();
+//     res.json(deletedItem)
+// }))
+
 
 
 

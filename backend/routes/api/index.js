@@ -3,7 +3,8 @@ const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const locationRouter = require('./locations')
 const userListingsRouter = require('./userListings')
-const reviewRouter = require('./reviews')
+const reviewsRouter = require('./reviews')
+const reviewRouter = require('./review')
 
 router.use('/session', sessionRouter);
 
@@ -11,7 +12,8 @@ router.use('/users', usersRouter);
 
 router.use('/locations', locationRouter)
 router.use('/user', userListingsRouter)
-router.use('/user', reviewRouter)
+router.use('/user', reviewsRouter)
+router.use('/reviews', reviewRouter)
 
 
 router.get('/api/csrf/restore', (req,res)=>{

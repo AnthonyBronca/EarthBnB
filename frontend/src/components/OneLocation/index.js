@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom'
 // import { getUserLocations, deleteUserLocations, updateLocation} from '../../store/userLocations'
 import { getOneLocation } from '../../store/oneLocation';
-import { getUserReviews, addNewReview } from '../../store/reviews';
+import { getUserReviews, addNewReview, deleteUserReview } from '../../store/reviews';
 // import StarRating from './StarRating';
 import { FaStar } from 'react-icons/fa';
 
@@ -40,10 +40,13 @@ function OneLocation() {
 
 
 
-    function deleteItem(e, locationId) {
+    function deleteItem(e, reviewId) {
         e.preventDefault();
         e.stopPropagation()
-        // return dispatch(deleteUserLocations(locationId))
+        const userId = sessionUser.id
+        console.log(userId, "userId inside deleteitem")
+        console.log(reviewId)
+        return dispatch(deleteUserReview(reviewId))
     }
 
     // // useEffect(()=>{
