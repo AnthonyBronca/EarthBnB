@@ -1,17 +1,17 @@
 #email-field{
-    margin-left: 50px;
+    margin-left: 80px;
 }
 
 #username-field{
-    margin-left: 50px;
+    margin-left: 80px;
 }
 
 #confirm-password-field{
-    margin-left: 50px;
+    margin-left: 80px;
 }
 
 #password-field{
-    margin-left: 50px;
+    margin-left: 80px;
 }
 
 #signup-button{
@@ -29,4 +29,15 @@
     display: flex;
     justify-content: space-between;
     align-content: space-between;
+}
+
+.sign-in-buttons{
+    display:flex;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.easter-egg{
+    color: white;
+    font-size: 3px;
 }

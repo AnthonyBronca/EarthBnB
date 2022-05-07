@@ -1,0 +1,18 @@
+.error-box{
+    /* display: flex;
+    justify-items: center;
+    align-items: center; */
+    margin-left: 100px;
+}
+
+#error-img{
+    display: flex;
+    margin-left: 30%;
+}
+
+#error-link{
+    display: flex;
+    margin-left: 35%;
+    text-decoration: none;
+    color: black;
+}

@@ -11,6 +11,7 @@ import LocationEditForm from "./components/LocationEditForm";
 // import Bookings from "./components/Bookings";
 // import Reviews from "./components/Reviews";
 import OneLocation from "./components/OneLocation";
+import Errors from "./components/Errors";
 
 
 function App() {
@@ -51,7 +52,7 @@ function App() {
           <Route path='/locations/:id'>
           <OneLocation />
           </Route>
-
+          <Errors />
         </Switch>
       )}
     </>
