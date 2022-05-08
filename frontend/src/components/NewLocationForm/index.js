@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { postNewLocation } from "../../store/locations";
 import './index.css'
+import { getUserLocations } from "../../store/userLocations";
 
 function NewLocationForm(){
     const [address, setAddress] = useState('');
@@ -15,6 +16,7 @@ function NewLocationForm(){
     const [errors, setErrors] = useState([]);
     const history = useHistory();
     const dispatch = useDispatch();
+
     const userId = useSelector((state) => {
         return state.session.user.id
     })
@@ -43,8 +45,18 @@ function NewLocationForm(){
                 url
             };
             dispatch(postNewLocation(formValues))
-            history.push(`/user/${userId}locations`)
+            .then(()=>  dispatch(getUserLocations(userId)))
+            history.push(`/user/${userId}/locations`)
+
         }
+    const demoListing = () => {
+        setAddress('Spongebob house Address')
+        setCity('Bikini Bottom')
+        setState('OC')
+        setListingDetails('Full Pineapple with 4 Beds 3 Baths')
+        setPrice('150')
+        setUrl('https://i2-prod.mirror.co.uk/incoming/article21711806.ece/ALTERNATES/s615/1_Spongebob-Squarepants.jpg')
+    }
     return (
   <form
   className="new-location-form"
@@ -144,6 +156,10 @@ function NewLocationForm(){
       disabled={errors.length > 0}>
           Submit Listing
       </button>
+      <div className="easter-egg">return oof</div>
+      <button type='button' onClick={(e) => demoListing()}>DEMO Listing</button>
+      <p>*The DEMO Listing button is only for DEMO purposes. It will auto-fill the listing and include an image shown below*</p>
+      <img src="https://i2-prod.mirror.co.uk/incoming/article21711806.ece/ALTERNATES/s615/1_Spongebob-Squarepants.jpg" className="demo-img" alt="spongebob real life house"></img>
   </form>
     )
 }

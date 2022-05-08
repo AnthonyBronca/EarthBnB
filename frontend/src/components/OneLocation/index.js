@@ -15,12 +15,10 @@ function OneLocation() {
     const history = useHistory();
     const { id } = useParams()
     const sessionUser = useSelector(state => state.session.user)
-    console.log(id, "THIS IS ID!!!!")
     const location = useSelector(state => state.oneLocation.location)
-    console.log(location, "THIS IS LOCATION******")
     const allReviews = useSelector(state => state.reviews)
-    const reviewArr = Object.values(allReviews);
-
+    const allreviewArr = Object.values(allReviews);
+    const reviewArr = allreviewArr.filter(review => review.locationId === location.id)
     const [isLoaded, setisLoaded] = useState(false);
     const [errors, setErrors] = useState([])
     const [review, setReview] = useState('')
@@ -117,7 +115,7 @@ function OneLocation() {
                                         </div>
                                     </div>
                                 </div>
-                            );
+                            )
                         }) : <h2>Loading</h2>}
                     </div>
                     <div className='input-review-box'>

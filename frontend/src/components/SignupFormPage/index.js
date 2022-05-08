@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
+
 function SignupFormPage() {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
@@ -12,7 +13,7 @@ function SignupFormPage() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState([]);
-
+    const [credential, setCredential] = useState('');
     if (sessionUser) return <Redirect to="/locations" />;
 
     const handleSubmit = (e) => {
@@ -27,6 +28,7 @@ function SignupFormPage() {
         }
         return setErrors(['Confirm Password field must be the same as the Password field']);
     };
+
 
     return (
         <form onSubmit={handleSubmit}>
@@ -87,8 +89,6 @@ function SignupFormPage() {
             <div className="signup-items">
                 <div className="sign-in-buttons">
                 <button type="submit" id="signup-button" className="user-listings-delete-button">Sign Up</button>
-                <div className="easter-egg">Return Oof</div>
-                <button className="user-listings-delete-button">Demo Login</button>
                 </div>
             </div>
         </form>

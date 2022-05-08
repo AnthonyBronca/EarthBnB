@@ -35,9 +35,6 @@
     display:flex;
     justify-content: space-between;
     align-content: space-between;
-}
+    margin-left: 60px;
 
-.easter-egg{
-    color: white;
-    font-size: 3px;
 }
