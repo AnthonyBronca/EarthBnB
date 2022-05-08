@@ -1,17 +1,179 @@
 .help-ukraine{
     background-color: #FF385C;
-    padding-left: 80px;
-    padding-right: 80px;
-    height: 500px;
-    width: 70%;
+    /* padding-left: 80px;
+    padding-right: 80px; */
+    height: 400px;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 10%;
+    /* margin-left: 10%; */
     padding-top: 40px;
+    color: white;
+    border-radius: 8px;
+    margin-right: 8%;
+    position: relative;
+    right: 40px;
 }
 
 .black-box{
     background-color: black;
     height: 1000px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.test-box{
+    color:black;
+    font-size: 150px;
+    display: flex;
+}
+
+.learn-more{
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: white solid 1px;
+    border-radius: 6px;
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+.learn-more-box{
+    display: flex;
+    justify-content: center;
+}
+
+.camp-img{
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
+    position: relative;
+    bottom: 200px;
+    left: 20px;
+    width: 78%;
+}
+
+.curiousity-button{
+    background-color: white;
+    border-radius: 40px;
+    color: linear-gradient(#e66465, #9198e5);
+    position: relative;
+    bottom: 400px;
+    left: 47%;
+    height: 50px;
+    width: 150px;
+    font-size: 18px;
+}
+
+.curiousity-text{
+    position: relative;
+    bottom: 400px;
+    left: 36%;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+.button-text{
+    background: linear-gradient(#e66465, #9198e5);
+    background-clip: text;
+    color: transparent;
+    font-size: 20px;
+    position: relative;
+    bottom: 15%;
+    font-weight: bold;
+}
+
+.languages-header{
+    margin-left: 12%;
+}
+
+.logo-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.language-logo{
+    height: 20%;
+    width: 20%;
+}
+
+.language-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 50px;
+    margin-right: 10px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.footer-elements-background{
+    background-color: rgba(220, 220, 220,.2);
+    width: 1000%;
+}
+
+.footer-elements{
+    display: grid;
+    grid-template-columns: 400px 300px 500px 200px ;
+    grid-template-areas:
+    "h1 h2 h3 h4";
+}
+
+.footer-header-h1{
+    display: grid;
+    grid-area: h1;
+    justify-content: space-between;
+    margin-left: 85px;
+}
+
+.footer-header-h2{
+    margin-left: 38px;
+    display: grid;
+    grid-area: h2;
+    justify-content: space-between;
+}
+
+.footer-header-h3{
+    display: grid;
+    grid-area: h3;
+    /* justify-content: space; */
+}
+
+.footer-header-h4{
+    display: grid;
+    grid-area: h4;
+    justify-content: space-between;
+    margin-left: 60px;
+}
+
+.footer-as{
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me-paragraph{
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    font-size: 17px;
+}
+
+.footer-as{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer-as:hover{
+    text-decoration: underline;
 }

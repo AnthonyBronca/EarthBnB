@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
@@ -9,6 +9,7 @@ function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user)
   // const sessionUserId = useSelector(state => state.session.user.id)
 console.log(sessionUser)
+
 
   let sessionLinks;
   if (sessionUser) {
