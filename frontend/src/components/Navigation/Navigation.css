@@ -20,14 +20,9 @@ justify-content: space-between;
 
 #nav-bar-box-container{
     box-shadow: rgb(0 0 0 / 8%) 0px 1px 1px !important;
-    /* transform-origin: 50% 0% !important; */
-    /* height: 140% !important; */
-    left: 0px !important;
-    pointer-events: none;
     position: fixed;
     top: 0px;
     width: 100%;
-    /* opacity: 0.4; */
     background-color: white;
     z-index: 1;
 }
