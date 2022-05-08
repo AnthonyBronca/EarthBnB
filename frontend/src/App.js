@@ -12,6 +12,7 @@ import LocationEditForm from "./components/LocationEditForm";
 // import Reviews from "./components/Reviews";
 import OneLocation from "./components/OneLocation";
 import Errors from "./components/Errors";
+import HomePage from "./components/HomePage";
 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
       {isLoaded && (
         <Switch>
          <Route exact path="/">
-           <Locations />
+           <HomePage />
          </Route>
           <Route path="/signup">
             <SignupFormPage />

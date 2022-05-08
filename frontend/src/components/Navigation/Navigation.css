@@ -44,6 +44,20 @@ justify-content: space-between;
     cursor: pointer;
 }
 
+.reveal{
+    background-color: black;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+
+.reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+
 /* #profile-button{
     height: 50px;
     width: 50px;

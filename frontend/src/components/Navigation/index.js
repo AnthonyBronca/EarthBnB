@@ -25,6 +25,7 @@ console.log(sessionUser)
   }
 
 
+
   return (
     <div id='nav-bar-box-container'>
     <ul>

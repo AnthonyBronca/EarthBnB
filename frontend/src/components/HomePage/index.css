@@ -1,0 +1,17 @@
+.help-ukraine{
+    background-color: #FF385C;
+    padding-left: 80px;
+    padding-right: 80px;
+    height: 500px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    padding-top: 40px;
+}
+
+.black-box{
+    background-color: black;
+    height: 1000px;
+}
