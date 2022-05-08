@@ -22,6 +22,7 @@ justify-content: space-between;
     box-shadow: rgb(0 0 0 / 8%) 0px 1px 1px !important;
     position: fixed;
     top: 0px;
+    right: 50px;
     width: 100%;
     background-color: white;
     z-index: 1;
@@ -49,7 +50,9 @@ justify-content: space-between;
     cursor: pointer;
 }
 
-
+.logo-a-img{
+    cursor: pointer;
+}
 
 
 /* #profile-button{
