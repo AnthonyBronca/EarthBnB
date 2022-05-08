@@ -11,7 +11,7 @@ function Locations() {
     const [isLoaded, setisLoaded] = useState(false);
 
     useEffect(() => {
-        dispatch(getLocations()).then(setisLoaded(true));
+        dispatch(getLocations()).then(()=>setisLoaded(true));
     }, [dispatch]);
     // console.log(locations, "this is locations")
     // console.log(locations[0].Images[0].url, "this is our test******")

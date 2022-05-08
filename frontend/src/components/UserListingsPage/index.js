@@ -31,11 +31,13 @@ function UserListingsPage() {
     }
 
     function deleteItem(e, locationId) {
+        setIsLoaded(false)
         e.preventDefault();
         e.stopPropagation()
         dispatch(deleteUserLocations(locationId))
-            .then(() => getUserLocations(sessionUser.id))
-            .then(() => getLocations())
+            .then(() => dispatch(getUserLocations(sessionUser.id)))
+            .then(() => dispatch(getLocations()))
+            .then(() => setIsLoaded(true))
     }
 
     if (!isLoaded) {

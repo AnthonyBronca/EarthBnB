@@ -8,6 +8,7 @@ import { getOneLocation } from '../../store/oneLocation';
 import { getUserReviews, addNewReview, deleteUserReview } from '../../store/reviews';
 // import StarRating from './StarRating';
 import { FaStar } from 'react-icons/fa';
+import { getLocations } from '../../store/locations';
 
 
 function OneLocation() {
@@ -29,8 +30,11 @@ function OneLocation() {
         dispatch(getOneLocation(id))
             .then(() => dispatch(getUserReviews(sessionUser.id)))
             .then(() => setisLoaded(true))
-    }
-        , [])
+    }, [])
+
+
+
+
 
     // console.log(reviewArr, "rev?")
     // // const locations = Object.values(allLocations)
@@ -41,10 +45,10 @@ function OneLocation() {
     function deleteItem(e, reviewId) {
         e.preventDefault();
         e.stopPropagation()
-        const userId = sessionUser.id
-        console.log(userId, "userId inside deleteitem")
-        console.log(reviewId)
-        return dispatch(deleteUserReview(reviewId))
+        dispatch(deleteUserReview(reviewId))
+        // const userId = sessionUser.id
+        // console.log(userId, "userId inside deleteitem")
+        // console.log(reviewId)
     }
 
     // // useEffect(()=>{
