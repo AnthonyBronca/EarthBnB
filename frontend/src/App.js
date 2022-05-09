@@ -14,7 +14,6 @@ import OneLocation from "./components/OneLocation";
 import Errors from "./components/Errors";
 import HomePage from "./components/HomePage";
 
-
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);

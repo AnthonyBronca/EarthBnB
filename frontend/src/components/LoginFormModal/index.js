@@ -22,7 +22,9 @@ function LoginFormModal() {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Log In</button>
+      <button  className='main-login-button' onClick={() => setShowModal(true)}>
+        <img className='hamburger-menu' src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png'></img>
+        </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <LoginForm />

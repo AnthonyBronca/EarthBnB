@@ -21,3 +21,16 @@
     text-decoration: none;
     vertical-align: middle;
 }
+
+.hamburger-menu{
+    height: 20px;
+}
+.main-login-button{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.main-login-button:hover{
+    box-shadow: 1px 1px 1px 1px black;
+}

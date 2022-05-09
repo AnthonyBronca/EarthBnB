@@ -40,7 +40,7 @@ const editLocation = (location) => {
       const response = await csrfFetch(`/api/locations/${locationId}`, {method: 'DELETE'});
       const location = await response.json();
       dispatch(deleteUserLocation(location))
-      return response
+      return location
   }
 
 

@@ -3,7 +3,6 @@ import { csrfFetch } from './csrf';
 const ADD_LOCATIONS = 'locations/addLocations'; //action type
 const ADD_USER_LOCATIONS = 'locations/addUserLocations'
 
-
 const addLocations = (locations) => { //action creator. creates action
   return { //action
     type: ADD_LOCATIONS,
@@ -17,6 +16,8 @@ const addUserLocations = (locations) => {
     payload: locations
   }
 }
+
+
 
 
 export const postNewLocation = (formValues) => async (dispatch) =>{
@@ -41,6 +42,8 @@ export const getLocations = () => async (dispatch) => {
   dispatch(addLocations(locations));
   return response;
 };
+
+
 
 const initialState = {};
 

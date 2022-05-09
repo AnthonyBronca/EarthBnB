@@ -50,6 +50,12 @@
     text-decoration: none;
 }
 
+body{
+    display: flex;
+    position: relative;
+    top: 150px;
+}
+
 
 /* @media (min-width:878px){
     #locations-layout{

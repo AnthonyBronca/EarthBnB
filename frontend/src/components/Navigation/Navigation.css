@@ -54,6 +54,12 @@ justify-content: space-between;
     cursor: pointer;
 }
 
+#sign-up-link{
+    display: flex;
+    position: relative;
+    right: 20px;
+}
+
 
 /* #profile-button{
     height: 50px;
