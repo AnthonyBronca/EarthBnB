@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {User,Location, Image} = require('../../db/models');
+const {User,Location, Image, Review} = require('../../db/models');
 
 
 
@@ -97,7 +97,11 @@ router.put('/:id', async(req,res)=>{
     return res.json(updatedLocation) //send it out
 })
 
-
+router.get('/:id/reviews', async(req,res)=>{
+    const id = req.params.id
+    const reviews = await Review.findAll({where: {locationId:id}})
+    res.json(reviews)
+})
 
 // router.get('/:id/locations', asyncHandler(async (req, res) => {
 //     const currentUserId = req.params.id;

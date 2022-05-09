@@ -1,4 +1,5 @@
 import { csrfFetch } from './csrf';
+import { DELETE_USER_LOCATION } from './userLocations';
 
 const ADD_LOCATIONS = 'locations/addLocations'; //action type
 const ADD_USER_LOCATIONS = 'locations/addUserLocations'
@@ -57,6 +58,13 @@ const locationReducer = (state = initialState, action) => { //reducer updates th
         newState[location.id] = location
       })
       return newState;
+    case DELETE_USER_LOCATION:
+      newState = {...state};
+      console.log(newState)
+      const id = action.payload.id
+      delete newState[id]
+        return newState;
+
       //payload is an object=> {id:66, userId: 5, address: '3200 N Alafaya Trail}
     // case ADD_USER_LOCATIONS:
     //   newState = {...state};
