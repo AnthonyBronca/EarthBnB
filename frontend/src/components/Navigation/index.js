@@ -27,7 +27,7 @@ const history = useHistory('/')
   }
 
 const clickImage = () =>{
-  history.push('/locations')
+  history.push('/')
 }
 
 
