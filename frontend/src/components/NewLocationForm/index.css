@@ -20,3 +20,8 @@
 .easter-egg{
     color:white;
 }
+
+#form-buttons{
+    position: relative;
+    left: 12px;
+}

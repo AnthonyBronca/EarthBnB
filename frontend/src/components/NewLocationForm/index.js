@@ -164,12 +164,14 @@ function NewLocationForm() {
                     </label>
                 </div>
                 <button
+                className='demo-login-button'
                     type="submit"
+                    id="form-buttons"
                     disabled={errors.length > 0}>
                     Submit Listing
                 </button>
                 <div className="easter-egg">return oof</div>
-                <button type='button' onClick={(e) => demoListing()}>DEMO Listing</button>
+                <button type='button' id='form-buttons' className='demo-login-button' onClick={(e) => demoListing()}>DEMO Listing</button>
                 <p>*The DEMO Listing button is only for DEMO purposes. It will auto-fill the listing and include an image shown below*</p>
                 <img src="https://i2-prod.mirror.co.uk/incoming/article21711806.ece/ALTERNATES/s615/1_Spongebob-Squarepants.jpg" className="demo-img" alt="spongebob real life house"></img>
             </form>

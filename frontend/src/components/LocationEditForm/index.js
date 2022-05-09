@@ -164,6 +164,8 @@ function LocationEditForm(){
       </div>
       <button
       type="submit"
+      id='form-buttons'
+      className='demo-login-button'
       disabled={errors.length > 0}>
           Submit Listing
       </button>
