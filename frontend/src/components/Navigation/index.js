@@ -20,8 +20,8 @@ const history = useHistory('/')
   } else {
     sessionLinks = (
       <>
+        <NavLink  id="sign-up-link" className='navLinks' to="/signup">Sign Up</NavLink>
         <LoginFormModal />
-        <NavLink className='navLinks' to="/signup">Sign Up</NavLink>
       </>
     );
   }

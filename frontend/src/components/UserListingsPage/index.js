@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 import { getUserLocations, deleteUserLocations, updateLocation } from '../../store/userLocations'
 import { getLocations } from '../../store/locations';
+import NotSignedIn from '../../components/NotSignedIn/index'
 
 function UserListingsPage() {
     const dispatch = useDispatch();
@@ -41,7 +42,7 @@ function UserListingsPage() {
     }
 
     if (!isLoaded) {
-        return null
+        return  <NotSignedIn />
     } else {
         return (
             <>
@@ -68,7 +69,7 @@ function UserListingsPage() {
                                         <div className='user-locations-buttons'>
                                             <button className='user-listings-edit-button' id={`edit-button-${location.id}`} onClick={(e) => { editButton(e, location.id) }} >Edit Listing</button>
                                             <button type="submit" className='user-listings-delete-button' id={`delete-button-${location.id}`}
-                                                onClick={(e) => deleteItem(e, location.id)}>Delete Listing</button>
+                                                onClick={(e) => (deleteItem(e, location.id))}>Delete Listing</button>
                                         </div>
                                     </div>
                                 </div>
@@ -79,7 +80,6 @@ function UserListingsPage() {
             </>
         )
     }
-
 }
 
 export default UserListingsPage

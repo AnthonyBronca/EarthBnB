@@ -9,6 +9,7 @@ import { getUserReviews, addNewReview, deleteUserReview } from '../../store/revi
 // import StarRating from './StarRating';
 import { FaStar } from 'react-icons/fa';
 import { getLocations } from '../../store/locations';
+import NotSignedIn from '../../components/NotSignedIn'
 
 
 function OneLocation() {
@@ -64,7 +65,6 @@ function OneLocation() {
     // // }, [address,city,state,country,listingDetails,price,url])
 
 
-
     const handleSubmit = (e) => {
         e.stopPropagation();
         e.preventDefault();
@@ -79,7 +79,7 @@ function OneLocation() {
         dispatch(addNewReview(formValues, userId))
     }
     if (!isLoaded) {
-        return null
+        return <NotSignedIn />
     } else {
         return (
             <>
@@ -116,6 +116,8 @@ function OneLocation() {
                                             {/* <button className='user-listings-edit-button' id={`edit-button-${review.id}`} onClick={(e) => {editButton(e, review.id)}} >Edit Review</button> */}
                                             <button type="submit" className='user-listings-delete-button' id={`delete-button-${review.id}`}
                                                 onClick={(e) => deleteItem(e, review.id)}>Delete Review</button>
+                                            {/* {(review.userId === sessionUser.id)? <button type="submit" className='user-listings-delete-button' id={`delete-button-${review.id}`}
+                                                onClick={(e) => deleteItem(e, review.id)}>Delete Review</button>: null} */}
                                         </div>
                                     </div>
                                 </div>
