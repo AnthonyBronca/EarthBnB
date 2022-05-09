@@ -15,9 +15,9 @@ function LoginFormModal() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // setErrors([]);
-    setCredential('FakeUser1')
-    setPassword('password2')
-    return dispatch(sessionActions.login({ credential, password }))
+    // setCredential('FakeUser1')
+    // setPassword('password2')
+    return dispatch(sessionActions.login({ credential:'FakeUser1', password:'password2' }))
   };
 
   return (

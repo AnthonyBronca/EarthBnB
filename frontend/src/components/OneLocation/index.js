@@ -27,9 +27,11 @@ function OneLocation() {
     const [rating, setRating] = useState(null)
     const [hover, setHover] = useState(null)
 
+    console.log(id, 'this is id')
+
     useEffect(() => {
         dispatch(getOneLocation(id))
-            .then(() => dispatch(getUserReviews(sessionUser.id)))
+            .then(() => dispatch(getUserReviews(id)))
             .then(() => setisLoaded(true))
     }, [])
 
@@ -113,11 +115,8 @@ function OneLocation() {
                                             </div>
                                         </a>
                                         <div className='user-locations-buttons'>
-                                            {/* <button className='user-listings-edit-button' id={`edit-button-${review.id}`} onClick={(e) => {editButton(e, review.id)}} >Edit Review</button> */}
-                                            <button type="submit" className='user-listings-delete-button' id={`delete-button-${review.id}`}
-                                                onClick={(e) => deleteItem(e, review.id)}>Delete Review</button>
-                                            {/* {(review.userId === sessionUser.id)? <button type="submit" className='user-listings-delete-button' id={`delete-button-${review.id}`}
-                                                onClick={(e) => deleteItem(e, review.id)}>Delete Review</button>: null} */}
+                                            {sessionUser.id === review.userId? <button type="submit" className='user-listings-delete-button' id={`delete-button-${review.id}`}
+                                                onClick={(e) => deleteItem(e, review.id)}>Delete Review</button>: null}
                                         </div>
                                     </div>
                                 </div>

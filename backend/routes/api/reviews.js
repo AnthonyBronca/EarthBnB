@@ -6,11 +6,11 @@ const asyncHandler = require('express-async-handler');
 
 
 
-router.get('/:id/reviews', asyncHandler(async(req,res)=>{
-    const id = req.params.id
-    const reviews = await Review.findAll({where: {userId:id}})
-    res.json(reviews)
-}))
+// router.get('/:id/reviews', asyncHandler(async(req,res)=>{
+//     const id = req.params.id
+//     const reviews = await Review.findAll({where: {userId:id}})
+//     res.json(reviews)
+// }))
 
 router.post('/:id/reviews', asyncHandler(async(req,res)=> {
     const {userId, locationId, review, rating} = req.body;

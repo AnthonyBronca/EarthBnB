@@ -26,8 +26,8 @@ const deleteReview = (deletedReview) => {
 }
 
 
-export const getUserReviews = (userId) => async (dispatch) => {
-    const response = await csrfFetch(`/api/user/${userId}/reviews`);
+export const getUserReviews = (id) => async (dispatch) => {
+    const response = await csrfFetch(`/api/locations/${id}/reviews`);
     const reviews = await response.json();
     dispatch(getReview(reviews));
     return response;

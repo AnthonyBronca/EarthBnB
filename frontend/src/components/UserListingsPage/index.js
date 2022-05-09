@@ -31,14 +31,21 @@ function UserListingsPage() {
         history.push(`/locations/${locationId}/edit-form`)
     }
 
+
+
+
+    // const deleteItem = (e) => {
+    //     dispatch
+    // }
+
     function deleteItem(e, locationId) {
-        setIsLoaded(false)
+        // setIsLoaded(false)
         e.preventDefault();
         e.stopPropagation()
         dispatch(deleteUserLocations(locationId))
-            .then(() => dispatch(getUserLocations(sessionUser.id)))
-            .then(() => dispatch(getLocations()))
-            .then(() => setIsLoaded(true))
+            // .then(() => dispatch(getUserLocations(sessionUser.id)))
+            // .then(() => dispatch(getLocations()))
+            // .then(() => setIsLoaded(true))
     }
 
     if (!isLoaded) {

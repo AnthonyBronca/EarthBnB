@@ -2,7 +2,7 @@ import { csrfFetch } from './csrf';
 import { getLocations } from './locations';
 
 const ADD_USER_LOCATIONS = 'locations/addUserLocations'
-const DELETE_USER_LOCATION = 'locations/deleteUserLocation'
+export const DELETE_USER_LOCATION = 'locations/deleteUserLocation'
 const EDIT_LOCATION = 'locations/editLocation';
 
 const addUserLocations = (locations) => {
