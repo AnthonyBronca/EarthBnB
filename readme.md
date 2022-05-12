@@ -1,4 +1,4 @@
-# Snack-Overfleaux
+# EarthBnB
 
 EarthBnB demo: https://w14-earthbnb.herokuapp.com/
 
