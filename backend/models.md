@@ -4,10 +4,10 @@ npx sequelize model:generate --name Location --attributes userId:integer,address
 
 npx sequelize model:generate --name Booking --attributes locationId:integer,userId:integer,startDate:date,endDate:date
 
-
 npx sequelize model:generate --name Image --attributes locationId:integer,url:string
 
 npx sequelize model:generate --name Review --attributes userId:integer,locationId:integer,review:string,rating:integer
+
 ------------------------------
 
 

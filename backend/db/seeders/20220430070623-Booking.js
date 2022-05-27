@@ -11,7 +11,8 @@ module.exports = {
    return queryInterface.bulkInsert('Bookings', [
     {locationId:"1",userId:'1',startDate:'07/04/2022',endDate:'07/05/2022',createdAt:'2022-03-02',updatedAt:'2022-03-02'},
     {locationId:"2",userId:'2',startDate:'06/01/2022',endDate:'07/01/2022',createdAt:'2022-03-02',updatedAt:'2022-03-02'},
-    {locationId:"3",userId:'3',startDate:'07/04/2022',endDate:'07/05/2022',createdAt:'2022-03-02',updatedAt:'2022-03-02'}
+    {locationId:"3",userId:'3',startDate:'07/04/2022',endDate:'07/05/2022',createdAt:'2022-03-02',updatedAt:'2022-03-02'},
+    {locationId:"3",userId:'1',startDate:'07/06/2022',endDate:'07/07/2022',createdAt:'2022-03-02',updatedAt:'2022-03-02'},
    ], {});
   },
 

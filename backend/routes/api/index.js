@@ -5,6 +5,7 @@ const locationRouter = require('./locations')
 const userListingsRouter = require('./userListings')
 const reviewsRouter = require('./reviews')
 const reviewRouter = require('./review')
+// const bookingRouter = require('./bookings')
 
 router.use('/session', sessionRouter);
 
@@ -14,6 +15,7 @@ router.use('/locations', locationRouter)
 router.use('/user', userListingsRouter)
 router.use('/user', reviewsRouter)
 router.use('/reviews', reviewRouter)
+// router.use('/bookings', bookingRouter)
 
 
 router.get('/api/csrf/restore', (req,res)=>{
@@ -25,6 +27,9 @@ router.get('/api/csrf/restore', (req,res)=>{
       }
 })
 
+//website./locations/
+
+//webite./music/:id
 
 
 
