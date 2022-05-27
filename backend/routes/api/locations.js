@@ -42,7 +42,6 @@ router.post('/new', (async(req,res)=>{
         return res.json(locations) //this sends an object
 }))
 
-
 router.delete('/:id', async(req,res)=>{
     const id = req.params.id
     const item = await Location.findByPk(id, {include: Image})

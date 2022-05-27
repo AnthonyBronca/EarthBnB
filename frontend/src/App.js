@@ -8,7 +8,7 @@ import Locations from "./components/LocationPage";
 import NewLocationForm from "./components/NewLocationForm";
 import UserListingsPage from "./components/UserListingsPage";
 import LocationEditForm from "./components/LocationEditForm";
-// import Bookings from "./components/Bookings";
+import Bookings from "./components/Bookings";
 // import Reviews from "./components/Reviews";
 import OneLocation from "./components/OneLocation";
 import Errors from "./components/Errors";
@@ -46,9 +46,9 @@ function App() {
           <Route path='/locations/:id/edit-form'>
             <LocationEditForm />
           </Route>
-          {/* <Route path='/user/:id/bookings'>
+          <Route path='/user/:id/bookings'>
             <Bookings />
-          </Route> */}
+          </Route>
           {/* <Route path='/user/:id/reviews'>
             <Reviews />
           </Route> */}
