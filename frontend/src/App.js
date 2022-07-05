@@ -13,6 +13,8 @@ import Bookings from "./components/Bookings";
 import OneLocation from "./components/OneLocation";
 import Errors from "./components/Errors";
 import HomePage from "./components/HomePage";
+import UserProfile from "./components/UserProfile/UserProfile";
+import Settings from "./components/Settings/Settings";
 
 function App() {
   const dispatch = useDispatch();
@@ -54,6 +56,12 @@ function App() {
           </Route> */}
           <Route path='/locations/:id'>
           <OneLocation />
+          </Route>
+          <Route path='/users/:username/settings'>
+            <Settings />
+          </Route>
+          <Route path='/users/:username'>
+            <UserProfile />
           </Route>
           <Errors />
         </Switch>

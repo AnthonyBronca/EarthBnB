@@ -8,18 +8,18 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
-
+import Settings from '../Settings/Settings.js';
 // import PersonAdd from '@mui/icons-material/PersonAdd';
-// import Settings from '@mui/icons-material/Settings';
 // import Logout from '@mui/icons-material/Logout';
 
 export default function AccountMenu() {
     const dispatch = useDispatch();
     const history = useHistory();
-
+    const userLetter = useSelector((state)=> state.session.user.username[0])
+    const user = useSelector((state)=> state.session.user.username)
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -35,6 +35,18 @@ export default function AccountMenu() {
     history.push('/')
   };
 
+  const goToProfile = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    history.push(`/users/${user}`)
+  }
+
+  const goToSettings = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    history.push(`/users/${user}/settings`)
+  }
+
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -49,7 +61,7 @@ export default function AccountMenu() {
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+            <Avatar sx={{ width: 32, height: 32, 'bgcolor':'FF375D'}}>{userLetter}</Avatar>
           </IconButton>
         </Tooltip>
       </Box>
@@ -88,22 +100,12 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem>
-          <Avatar /> Profile
-        </MenuItem>
-        <MenuItem>
-          <Avatar /> My account
+        <MenuItem onClick={goToProfile}>
+          <Avatar sx={{bgcolor: 'FF375D'}}>{userLetter}</Avatar> My account
         </MenuItem>
         <Divider />
-        <MenuItem>
+        <MenuItem onClick={goToSettings}>
           <ListItemIcon>
-            {/* <PersonAdd fontSize="small" /> */}
-          </ListItemIcon>
-          Add another account
-        </MenuItem>
-        <MenuItem>
-          <ListItemIcon>
-            {/* <Settings fontSize="small" /> */}
           </ListItemIcon>
           Settings
         </MenuItem>
