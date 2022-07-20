@@ -1,14 +1,26 @@
+/* .page-container-splash{
+    height: 100%;
+} */
+
+/* .full-body-splash{
+    width: 100%;
+} */
+
+
+
 .help-ukraine{
     background-color: #FF385C;
     /* padding-left: 80px;
     padding-right: 80px; */
-    height: 400px;
+    /* height: 400px; */
+    height: 40%;
     width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     /* margin-left: 10%; */
-    padding-top: 40px;
+    /* padding-top: 40px; */
+    padding-top: 10%;
     color: white;
     border-radius: 8px;
     margin-right: 8%;
@@ -178,3 +190,10 @@
 .footer-as:hover{
     text-decoration: underline;
 }
+
+/*
+@media screen and (max-width: 60em) {
+    .full-body-splash{
+        width: 50%;
+    }
+} */

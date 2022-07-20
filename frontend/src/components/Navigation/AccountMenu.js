@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import Settings from '../Settings/Settings.js';
+
 // import PersonAdd from '@mui/icons-material/PersonAdd';
 // import Logout from '@mui/icons-material/Logout';
 
@@ -45,6 +46,10 @@ export default function AccountMenu() {
     e.preventDefault();
     e.stopPropagation();
     history.push(`/users/${user}/settings`)
+  }
+
+  const addNewListing = () => {
+    history.push('/locations/new')
   }
 
   return (
@@ -100,16 +105,22 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem onClick={goToProfile}>
+        <MenuItem style={{'fontSize': '12px'}} onClick={goToProfile}>
           <Avatar sx={{bgcolor: 'FF375D'}}>{userLetter}</Avatar> My account
         </MenuItem>
         <Divider />
-        <MenuItem onClick={goToSettings}>
+        <MenuItem style={{'fontSize': '12px'}} onClick={goToSettings}>
           <ListItemIcon>
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem onClick={logout}>
+        <MenuItem style={{'fontSize': '12px'}} onClick={addNewListing}>
+          <ListItemIcon>
+            {/* <Logout fontSize="small" /> */}
+          </ListItemIcon>
+          Host your home
+        </MenuItem>
+        <MenuItem style={{'fontSize': '12px'}} onClick={logout}>
           <ListItemIcon>
             {/* <Logout fontSize="small" /> */}
           </ListItemIcon>

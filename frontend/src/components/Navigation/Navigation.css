@@ -16,18 +16,31 @@ justify-content: space-between;
     display: flex;
     margin: 40px;
     padding: 40px;
+    position: fixed;
 }
 
 #nav-bar-box-container{
     box-shadow: rgb(0 0 0 / 8%) 0px 1px 1px !important;
     position: fixed;
     top: 0px;
-    right: 50px;
+    /* right: 1%; */
     width: 100%;
     background-color: white;
     z-index: 1;
 }
 
+element.style{
+    left: 1666px;
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list{
+    width: 160px;
+}
+
+.list-items{
+    position: relative;
+    width: 96%;
+}
 
 #logo-img{
     height: 35px;

@@ -15,6 +15,7 @@ import Errors from "./components/Errors";
 import HomePage from "./components/HomePage";
 import UserProfile from "./components/UserProfile/UserProfile";
 import Settings from "./components/Settings/Settings";
+import LoginForm from "./components/LoginFormModal/LoginForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,6 +36,9 @@ function App() {
          </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path='/signin'>
+            <LoginForm />
           </Route>
           <Route path='/locations/new'>
             <NewLocationForm />
