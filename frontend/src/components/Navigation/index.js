@@ -135,7 +135,7 @@ function Navigation({ isLoaded }) {
             <NavLink className='navLinks' exact to="/locations">Home</NavLink>
             <NavLink className='navLinks' to={'/locations/new'}>Add a listing</NavLink>
             <NavLink className='navLinks' to={`/user/${sessionUser?.id}/locations`}>Your Listings</NavLink>
-            <NavLink className='navLinks' to='/bookings'>Bookings</NavLink>
+            {/* <NavLink className='navLinks' to='/bookings'>Bookings</NavLink> */}
             {isLoaded && sessionLinks}
           </ul>
         {/* </ul> */}

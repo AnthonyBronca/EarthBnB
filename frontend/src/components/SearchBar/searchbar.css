@@ -1,0 +1,26 @@
+/* #users-search{
+    color: black;
+    position: relative;
+    bottom: 12px;
+    left: 12%;
+    width: 50px;
+  }
+  .MuiAutocomplete-popper{
+    background-color: rgb(255,255,255);
+  }
+
+  .MuiAutocomplete-listbox{
+    background: rgb(255,255,255);
+  }
+
+
+  .MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon .MuiAutocomplete-inputRoot {
+    padding-right: 15px;
+  }
+  /* .MuiAutocomplete-option[data-focus='true']{
+    background-color: blue;
+  } */
+
+  /* .MuiSvgIcon-root{
+    visibility: hidden;
+  } */

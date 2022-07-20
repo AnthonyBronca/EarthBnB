@@ -19,8 +19,9 @@ import Settings from '../Settings/Settings.js';
 export default function AccountMenu() {
     const dispatch = useDispatch();
     const history = useHistory();
-    const userLetter = useSelector((state)=> state.session.user.username[0])
-    const user = useSelector((state)=> state.session.user.username)
+    const userLetter = useSelector((state)=> state.session.user.username[0]);
+    const user = useSelector((state)=> state.session.user.username);
+    const userId = useSelector((state)=> state.session.user.id);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -52,6 +53,10 @@ export default function AccountMenu() {
     history.push('/locations/new')
   }
 
+  const goToListings = () => {
+    history.push(`/user/${userId}/locations`)
+  }
+
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -66,7 +71,7 @@ export default function AccountMenu() {
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32, 'bgcolor':'FF375D'}}>{userLetter}</Avatar>
+            <Avatar sx={{ width: 32, height: 32, 'bgcolor':'FF375D'}}>{userLetter.toUpperCase()}</Avatar>
           </IconButton>
         </Tooltip>
       </Box>
@@ -106,7 +111,7 @@ export default function AccountMenu() {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem style={{'fontSize': '12px'}} onClick={goToProfile}>
-          <Avatar sx={{bgcolor: 'FF375D'}}>{userLetter}</Avatar> My account
+          <Avatar sx={{bgcolor: 'FF375D'}}>{userLetter.toUpperCase()}</Avatar> My account
         </MenuItem>
         <Divider />
         <MenuItem style={{'fontSize': '12px'}} onClick={goToSettings}>
@@ -119,6 +124,12 @@ export default function AccountMenu() {
             {/* <Logout fontSize="small" /> */}
           </ListItemIcon>
           Host your home
+        </MenuItem>
+        <MenuItem style={{'fontSize': '12px'}} onClick={goToListings}>
+          <ListItemIcon>
+            {/* <Logout fontSize="small" /> */}
+          </ListItemIcon>
+          Your Listings
         </MenuItem>
         <MenuItem style={{'fontSize': '12px'}} onClick={logout}>
           <ListItemIcon>
