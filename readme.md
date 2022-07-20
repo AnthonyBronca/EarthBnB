@@ -14,6 +14,18 @@ https://github.com/AnthonyBronca
 ------
 EarthBnB is supposed to mimic the functionality of AirBnB. It is a full stack application that allows users to browse listings, check reviews on a listings, post a listing, review a listing, and make edits/deletes to items they created on their account. EarthBnB has a base of 3 users, 3 listings, and 4 reviews pre-seeded. Users testing are free to leave their own tests as long they remain approprite to the theme and is not-offensive.
 
+
+## Images
+
+### Splash Page![Screen Shot 2022-07-12 at 6 21 21 PM](https://user-images.githubusercontent.com/95654116/178605589-33741031-98bf-4901-80e7-dca8665253c5.png)
+
+### Home Page
+![Screen Shot 2022-07-12 at 6 22 07 PM](https://user-images.githubusercontent.com/95654116/178605705-bf11b38f-2bf4-4526-bf1a-447a49dc82ce.png)
+
+### Individual listing page
+![Screen Shot 2022-07-12 at 6 22 28 PM](https://user-images.githubusercontent.com/95654116/178605803-6a64838b-27a1-4a73-bc0c-45cb787643db.png)
+
+
 ## How to Run
 ------
 1. You will need to download the repo and open it in VScode
