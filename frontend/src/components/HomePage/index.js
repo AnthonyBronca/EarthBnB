@@ -12,8 +12,8 @@ function HomePage() {
     }
 
     return (
-        <div>
-            <div>
+        <div className="full-body-splash">
+            <div className="page-container-splash">
                 <div className="black-box">
                     <div className="test-box">test</div>
                     <div className="help-ukraine">
