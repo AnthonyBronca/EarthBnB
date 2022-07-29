@@ -1,10 +1,10 @@
-#email-field{
+/* #email-field{
     margin-left: 80px;
-}
+} */
 
-#username-field{
+/* #username-field{
     margin-left: 80px;
-}
+} */
 
 #confirm-password-field{
     margin-left: 80px;
@@ -18,13 +18,22 @@
     margin-left: 50px;
 }
 
-.signup-items{
+.form-main-container{
     display: flex;
-    justify-content: space-between;
-    align-content: space-between;
-    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     position: relative;
     top: 200px;
+}
+
+.signup-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* justify-content: space-between; */
+    /* align-content: space-between; */
+    padding: 5px;
 }
 
 .input-box-signup{
@@ -38,5 +47,9 @@
     justify-content: space-between;
     align-content: space-between;
     margin-left: 60px;
+}
 
+.sign-up-button{
+    display: flex;
+    margin-right: 60px;
 }

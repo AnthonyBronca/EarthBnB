@@ -17,6 +17,14 @@ router.get('/', (async(req,res)=>{
 }))
 
 
+router.get('/list', (async(req,res)=>{
+    const locations = await Location.findAll()
+    // console.log('locations?***********************', locations)
+    //locations is an array of objects. ex: {id: 1, userId: 1}
+    return res.json(locations)
+}))
+
+
 router.post('/new', (async(req,res)=>{
     const {userId,address, city, state, country, name, price, url} = req.body;
 

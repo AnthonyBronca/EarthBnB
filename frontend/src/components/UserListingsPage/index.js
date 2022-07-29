@@ -2,10 +2,11 @@ import './index.css'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 // import { getUserLocations } from '../../store/userLocations.js';
-import { useHistory } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import { getUserLocations, deleteUserLocations, updateLocation } from '../../store/userLocations'
 import { getLocations } from '../../store/locations';
 import NotSignedIn from '../../components/NotSignedIn/index'
+import { flexbox } from '@mui/system';
 
 function UserListingsPage() {
     const dispatch = useDispatch();
@@ -15,6 +16,7 @@ function UserListingsPage() {
     const locations = Object.values(allLocations)
     const [isLoaded, setIsLoaded] = useState(false)
 
+    console.log(locations, 'this is locations')
 
     useEffect(() => {
         if (sessionUser) {
@@ -43,13 +45,25 @@ function UserListingsPage() {
         e.preventDefault();
         e.stopPropagation()
         dispatch(deleteUserLocations(locationId))
-            // .then(() => dispatch(getUserLocations(sessionUser.id)))
-            // .then(() => dispatch(getLocations()))
-            // .then(() => setIsLoaded(true))
+        // .then(() => dispatch(getUserLocations(sessionUser.id)))
+        // .then(() => dispatch(getLocations()))
+        // .then(() => setIsLoaded(true))
     }
 
     if (!isLoaded) {
-        return  <NotSignedIn />
+        return <NotSignedIn />
+    } else if (locations.length === 0) {
+        return (
+            <>
+                <div>
+                    <h1 id='main-container' >Your Listings</h1>
+                </div>
+                <div>
+                    <h2>It looks like you do not have any listings!</h2>
+                    <NavLink to='/locations/new'>Make one?</NavLink>
+                </div>
+            </>
+        )
     } else {
         return (
             <>

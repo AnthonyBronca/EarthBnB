@@ -5,6 +5,11 @@
     justify-items: center;
 }
 
+.overall-container{
+    position: relative;
+    top: 40px;
+}
+
 #locations-layout{
     display: grid;
     grid-template-columns: repeat(3,minmax(0px, 1fr));
@@ -50,11 +55,11 @@
     text-decoration: none;
 }
 
-body{
+/* body{
     display: flex;
     position: relative;
     top: 150px;
-}
+} */
 
 
 /* @media (min-width:878px){

@@ -22,6 +22,7 @@ function Locations() {
     } else {
         return (
             <>
+            <div className="overall-container">
                 <div id="main-container">
                     <div id="locations-layout">
                         {locations ? locations.map((location) => {
@@ -44,6 +45,7 @@ function Locations() {
                             );
                         }) : <h2>Loading</h2>}
                     </div>
+                </div>
                 </div>
             </>
         )
