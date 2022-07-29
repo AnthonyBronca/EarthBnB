@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
@@ -15,15 +15,21 @@ import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import { profileIcon } from './icons';
 import LoginFormPage from '../LoginFormPage';
+import * as sessionActions from '../../store/session';
 
 function Navigation({ isLoaded }) {
+  const history = useHistory('/')
+  const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user)
   // const sessionUserId = useSelector(state => state.session.user.id)
 
-  const history = useHistory('/')
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [signInModal, setSignInModal] = useState(false);
+  const [credential, setCredential] = useState('');
+  const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState([]);
+
 
   const sendToSignUp = () => {
     history.push('/signUp')
@@ -31,6 +37,10 @@ function Navigation({ isLoaded }) {
 
   const signIn = () => {
     history.push('/signin')
+  }
+
+  const demo = () => {
+    return dispatch(sessionActions.login({ credential:'FakeUser1', password:'password2' }))
   }
 
   const sendToListings = () => {
@@ -106,6 +116,7 @@ function Navigation({ isLoaded }) {
       >
         <MenuItem onClick={sendToSignUp} style={{'fontSize': '12px', 'fontWeight': 'bold'}}>Sign up</MenuItem>
         <MenuItem onClick={signIn} style={{'fontSize': '12px'}}>Sign in</MenuItem>
+        <MenuItem onClick={demo} style={{'fontSize': '12px'}}>Demo Sign in</MenuItem>
         <Divider />
         <MenuItem style={{'fontSize': '12px'}} onClick={sendToListings}>Host your home</MenuItem>
         <MenuItem style={{'fontSize': '12px'}}>About</MenuItem>
