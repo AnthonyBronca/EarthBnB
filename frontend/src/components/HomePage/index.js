@@ -18,10 +18,10 @@ function HomePage() {
                     <div className="test-box">test</div>
                     <div className="help-ukraine">
                         <div className="inner-help-ukraine">
-                            <h1>Help house 100,000 refugees fleeing Ukraine</h1>
+                            <h1>Check out Anthony's Personal Site</h1>
                             <div className="learn-more-box">
                                 <span className="random-span">
-                                    <a className="learn-more" href="https://www.airbnb.org/help-ukraine?locale=en&_ga=2.183346342.1242383136.1651902100-522967509.1649654713">Learn More</a>
+                                    <a className="learn-more" href="https://anthony-bronca-portfolio.herokuapp.com/index.html">Learn More</a>
                                 </span>
                             </div>
                         </div>
